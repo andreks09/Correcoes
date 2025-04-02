@@ -1,0 +1,281 @@
+-- início da tabela Secretaria
+INSERT INTO `secretaria`(`nomenclatura`, `endereco`) VALUES ('Chefia de Gabinete do Prefeito','Rua Mariana Michels Borges, 201');
+INSERT INTO `secretaria`(`nomenclatura`, `endereco`) VALUES ('Procuradoria-Geral do Município','Rua Mariana Michels Borges, 201');
+INSERT INTO `secretaria`(`nomenclatura`, `endereco`) VALUES ('Controladoria Interna','Rua Mariana Michels Borges, 201');
+INSERT INTO `secretaria`(`nomenclatura`, `endereco`) VALUES ('Fazenda','Rua Mariana Michels Borges, 201');
+INSERT INTO `secretaria`(`nomenclatura`, `endereco`) VALUES ('Administração','Rua Mariana Michels Borges, 201');
+INSERT INTO `secretaria`(`nomenclatura`, `endereco`) VALUES ('Agricultura e Pesca','Avenida 1101, Brasil, 1771');
+INSERT INTO `secretaria`(`nomenclatura`, `endereco`) VALUES ('Assistência Social','Avenida das Nações Unidas, 346');
+INSERT INTO `secretaria`(`nomenclatura`, `endereco`) VALUES ('Desenvolvimento Social e Econômico','Rua Mariana Michels Borges');
+INSERT INTO `secretaria`(`nomenclatura`, `endereco`) VALUES ('Educação','Av. 1590 - Nossa Senhora do Perpétuo Socorro, 430');
+INSERT INTO `secretaria`(`nomenclatura`, `endereco`) VALUES ('Esportes e Lazer','Rua Walter Crisanto, 5');
+INSERT INTO `secretaria`(`nomenclatura`, `endereco`) VALUES ('Infraestrutura','Rua Mariana Michels Borges, 201');
+INSERT INTO `secretaria`(`nomenclatura`, `endereco`) VALUES ('Meio Ambiente','Rua Mariana Michels Borges');
+INSERT INTO `secretaria`(`nomenclatura`, `endereco`) VALUES ('Planejamento Urbano','Rua Mariana Michels Borges');
+INSERT INTO `secretaria`(`nomenclatura`, `endereco`) VALUES ('Saúde','Avenida 877 Dr.ª Zilda Arns Neumann, 1233');
+INSERT INTO `secretaria`(`nomenclatura`, `endereco`) VALUES ('Segurança Pública e Trânsito','Rua Ana Maria Rodrigues de Freitas, 1193');
+INSERT INTO `secretaria`(`nomenclatura`, `endereco`) VALUES ('Turismo e Cultura','Rua Mariana Michels Borges');
+-- fim da tabela Secretaria
+
+-- início da tabela de Departamento/ Assessoria
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Expediente','Rua Mariana Michels Borges, 201', 1);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Comunicação','Rua Mariana Michels Borges, 201', 1);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Assessoria do Prefeito','Rua Mariana Michels Borges, 201', 1);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Assessoria de Agenda Oficial','Rua Mariana Michels Borges, 201', 1);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Assessoria de Imprensa','Rua Mariana Michels Borges, 201', 1);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Assessoria de Audiovisual','Rua Mariana Michels Borges, 201', 1);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Jurídico','Rua Mariana Michels Borges, 201', 2);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Assessoria em Processos Licitatórios','Rua Mariana Michels Borges, 201', 2);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Gerência de Tributos','Rua Mariana Michels Borges, 201', 4);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Gerência de Contabilidade','Rua Mariana Michels Borges, 201', 4);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Finanças','Rua Mariana Michels Borges, 201', 4);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Assessoria Administrativa da Fazenda Municipal','Rua Mariana Michels Borges, 201', 4);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Administração','Rua Mariana Michels Borges, 201', 5);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Gerência de Compras, Licitações, Contratos e Almoxarifado','Rua Mariana Michels Borges, 201', 5);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Recursos Humanos','Rua Mariana Michels Borges, 201', 5);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Assessoria de Pessoal','Rua Mariana Michels Borges, 201', 5);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Gerência de Convênios','Rua Mariana Michels Borges, 201', 5);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Diretoria de Convênios e Parcerias','Rua Mariana Michels Borges, 201', 5);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Tecnologia da Informação','Rua Mariana Michels Borges, 201', 5);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Ouvidoria','Rua Mariana Michels Borges, 201', 5);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Assessoria de Planejamento Administrativo e Avaliação','Rua Mariana Michels Borges, 201', 5);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Pesca','Avenida 1101, Brasil, 1771', 6);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Agricultura','Avenida 1101, Brasil, 1771', 6);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Assessoria de Agricultura e Pesca','Avenida 1101, Brasil, 1771', 6);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Assistência Social','Avenida das Nações Unidas , 346', 7);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Desenvolvimento Econômico','Avenida das Nações Unidas , 346', 8);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Desenvolvimento Social','Avenida das Nações Unidas , 346', 8);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Assessoria de Desenvolvimento Econômico','Avenida das Nações Unidas , 346', 8);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Assessoria de Desenvolvimento Social','Avenida das Nações Unidas , 346', 8);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Coordenação Pedagógica','Av. 1590 - Nossa Senhora do Perpétuo Socorro, 430', 9);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Administração','Av. 1590 - Nossa Senhora do Perpétuo Socorro, 430', 9);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Integração de Jornada Escolar','Av. 1590 - Nossa Senhora do Perpétuo Socorro, 430', 9);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Assessoria do Secretário de Educação','Av. 1590 - Nossa Senhora do Perpétuo Socorro, 430', 9);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Gestor Escolar','Av. 1590 - Nossa Senhora do Perpétuo Socorro, 430', 9);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Esportes e Lazer','Av. 1590 - Nossa Senhora do Perpétuo Socorro, 430', 10);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Administração de Equipamentos Desportivos','Av. 1590 - Nossa Senhora do Perpétuo Socorro, 430', 10);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Obras Públicas','Rua Mariana Michels Borges, 201', 11);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Serviços Públicos','Rua Mariana Michels Borges, 201', 11);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Infraestrutura','Rua Mariana Michels Borges, 201', 11);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Assessoria de Obras','Rua Mariana Michels Borges, 201', 11);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Assessoria de Serviços Públicos','Rua Mariana Michels Borges, 201', 11);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Controle Ambiental','Rua Mariana Michels Borges', 12);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Gestão Ambiental','Rua Mariana Michels Borges', 12);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Assessoria de Gestão Ambiental','Rua Mariana Michels Borges', 12);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Planejamento','Rua Mariana Michels Borges', 13);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Engenharia','Rua Mariana Michels Borges', 13);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Assessoria de Urbanismo','Rua Mariana Michels Borges', 13);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Assessoria de Planejamento','Rua Mariana Michels Borges', 13);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Gestão e Planejamento','Avenida 877 Dr.ª Zilda Arns Neumann, 1233', 14);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Vigilância em Saúde','Avenida 877 Dr.ª Zilda Arns Neumann, 1233', 14);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Média e Alta Complexidade','Avenida 877 Dr.ª Zilda Arns Neumann, 1233', 14);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Atenção Básica','Avenida 877 Dr.ª Zilda Arns Neumann, 1233', 14);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Assessoria de Saúde','Avenida 877 Dr.ª Zilda Arns Neumann, 1233', 14);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Comando da Guarda Civil Municipal','Rua Ana Maria Rodrigues de Freitas, 1193', 15);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Trânsito','Rua Ana Maria Rodrigues de Freitas, 1193', 15);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Segurança Pública','Rua Ana Maria Rodrigues de Freitas, 1193', 15);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Assessoria de Trânsito','Rua Ana Maria Rodrigues de Freitas, 1193', 15);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Turismo','Rua Mariana Michels Borges', 16);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento de Cultura','Rua Mariana Michels Borges', 16);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Departamento do Foral','Rua Mariana Michels Borges', 16);
+INSERT INTO `departamento`(`nomenclatura`, `endereco`, `secretaria_idsecretaria`) VALUES ('Assessoria de Divulgação Turística','Rua Mariana Michels Borges', 16);
+-- fim da tabela de Departamento
+
+-- início da tabela Coordenacao
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Atos Normativos e Expediente','Rua Mariana Michels Borges, 201', 1);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Relações Públicas e Imprensa','Rua Mariana Michels Borges, 201', 1);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Divulgação Municipal, Publicidade e Campanhas Institucionais','Rua Mariana Michels Borges, 201', 1);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação das Ações da Fazenda','Rua Mariana Michels Borges, 201', 2);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Processos Contenciosos','Rua Mariana Michels Borges, 201', 2);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação das Atividades Extrajudiciais','Rua Mariana Michels Borges, 201', 2);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Prevenção à Ocupação Irregular do Solo Urbano','Rua Mariana Michels Borges, 201', 2);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Tributos e Processos Administrativos','Rua Mariana Michels Borges, 201', 4);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Auditoria, Fiscalização e Recurso Tributário','Rua Mariana Michels Borges, 201', 4);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Tesouraria e Contabilidade','Rua Mariana Michels Borges, 201', 4);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Orçamento Financeiro','Rua Mariana Michels Borges, 201', 4);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Patrimônio Público','Rua Mariana Michels Borges, 201', 5);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Compras e Almoxarifado','Rua Mariana Michels Borges, 201', 5);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Contratos e Licitações','Rua Mariana Michels Borges, 201', 5);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Pessoal e Recursos Humanos','Rua Mariana Michels Borges, 201', 5);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Diretoria de Convênios e Parcerias','Rua Mariana Michels Borges, 201', 5);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Informática e Sistemas','Rua Mariana Michels Borges, 201', 5);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Serviços de Acolhimento Institucional para Crianças e Adolescentes','Avenida das Nações Unidas , 346', 7);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação do CRAS e CREAS','Avenida das Nações Unidas , 346', 7);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Atividades Econômicas','Rua Mariana Michels Borges', 8);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação do Mercado da Maria','Rua Mariana Michels Borges', 8);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação do PROCON','Rua Mariana Michels Borges', 8);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação da Cidadania','Rua Mariana Michels Borges', 8);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação Geral Pedagógica','Av. 1590 - Nossa Senhora do Perpétuo Socorro, 430', 9);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Manutenção dos Prédios','Av. 1590 - Nossa Senhora do Perpétuo Socorro, 430', 9);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação Administrativa da Educação','Av. 1590 - Nossa Senhora do Perpétuo Socorro, 430', 9);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Integração de Jornada','Av. 1590 - Nossa Senhora do Perpétuo Socorro, 430', 9);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenador de Ensino Integral','Av. 1590 - Nossa Senhora do Perpétuo Socorro, 430', 9);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenador de Gestão Pedagógica','Av. 1590 - Nossa Senhora do Perpétuo Socorro, 430', 9);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Competições e Eventos','Rua Walter Crisanto, 5', 10);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Projetos de Base e Rendimento','Rua Walter Crisanto, 5', 10);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Manutenção e Funcionamento dos Equipamentos Desportivos','Rua Walter Crisanto, 5', 10);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Planejamento de Obras Públicas','Rua Mariana Michels Borges, 201', 11);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Execução e Fiscalização de Obras Públicas','Rua Mariana Michels Borges, 201', 11);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Manutenção de Máquinas','Rua Mariana Michels Borges, 201', 11);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Patrulha Mecanizada Sul','Rua Mariana Michels Borges, 201', 11);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Patrulha Mecanizada Central','Rua Mariana Michels Borges, 201', 11);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Patrulha Mecanizada Norte','Rua Mariana Michels Borges, 201', 11);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Manutenção de Prédios, Equipamentos Públicos e Limpeza Urbana','Rua Mariana Michels Borges, 201', 11);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Bem-estar Animal','Rua Mariana Michels Borges', 12);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação do Ordenamento Territorial','Rua Mariana Michels Borges', 13);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Fiscalização','Rua Mariana Michels Borges', 13);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Projetos','Rua Mariana Michels Borges', 13);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Manutenção do Pronto Atendimento – P.A. 24hrs','Avenida 877 Dr.ª Zilda Arns Neumann, 1233', 14);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação do Centro de Atenção Psicossocial – CAPS I','Avenida 877 Dr.ª Zilda Arns Neumann, 1233', 14);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação das Práticas Integrativas e Complementares – PICS','Avenida 877 Dr.ª Zilda Arns Neumann, 1233', 14);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação da Defesa Civil','Rua Ana Maria Rodrigues de Freitas, 1193', 15);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação do Centro de Atendimento ao Turista – CAT e Rotas Turísticas','Rua Mariana Michels Borges', 16);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Projetos, Resgate e Manutenção de Patrimônio Histórico-cultural','Rua Mariana Michels Borges', 16);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Desenvolvimento do Foral','Rua Mariana Michels Borges', 16);
+INSERT INTO `coordenacao`(`nomenclatura`, `endereco`, `departamento_secretaria_idsecretaria`) VALUES ('Coordenação de Eventos','Rua Mariana Michels Borges', 16);
+-- fim da tabela Coordenacao
+
+-- início da tabela Setor
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Assistência em Legislação e Expediente','Rua Mariana Michels Borges, 201', 1, 1);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Atividades do Executivo Fiscal','Rua Mariana Michels Borges, 201', 9, 4);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Atividades Administrativas','Rua Mariana Michels Borges, 201', 9, 4);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Cadastro Mobiliário e Imobiliário','Rua Mariana Michels Borges, 201', 9, 4);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Expedição de Documentos e Atendimento','Rua Mariana Michels Borges, 201', 9, 4);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Protocolo Geral','Rua Mariana Michels Borges, 201',9, 4);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Dívida Ativa','Rua Mariana Michels Borges, 201', 9, 4);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Fiscalização de Tributos','Rua Mariana Michels Borges, 201', 9, 4);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Tesouraria','Rua Mariana Michels Borges, 201', 10, 4);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Contabilidade','Rua Mariana Michels Borges, 201', 10, 4);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Orçamento Financeiro','Rua Mariana Michels Borges, 201', 10, 4);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Bens Móveis','Rua Mariana Michels Borges, 201', 13, 5);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Bens Imóveis','Rua Mariana Michels Borges, 201', 13, 5);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Frotas','Rua Mariana Michels Borges, 201', 13, 5);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Compras','Rua Mariana Michels Borges, 201', 14, 5);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Almoxarifado','Rua Mariana Michels Borges, 201', 14, 5);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Contratos','Rua Mariana Michels Borges, 201', 14, 5);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Licitações','Rua Mariana Michels Borges, 201', 14, 5);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Pessoal','Rua Mariana Michels Borges, 201', 15, 5);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Recursos Humanos','Rua Mariana Michels Borges, 201', 15, 5);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Captação de Recursos e Terceiro Setor','Rua Mariana Michels Borges, 201', 17, 5);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Execução, Acompanhamento e Prestação de Contas','Rua Mariana Michels Borges, 201', 17, 5);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Gestão de Convênios','Rua Mariana Michels Borges, 201', 17, 5);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Informática','Rua Mariana Michels Borges, 201', 19, 5);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor da Cidadania','Rua Mariana Michels Borges', 27, 8);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Regularização Fundiária','Rua Mariana Michels Borges', 27, 8);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor Pedagógico de Educação Infantil','Av. 1590 - Nossa Senhora do Perpétuo Socorro, 430', 30, 9);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor Pedagógico dos Anos Iniciais do Ensino Fundamental','Av. 1590 - Nossa Senhora do Perpétuo Socorro, 430', 30, 9);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor Pedagógico dos Anos Finais do Ensino Fundamental','Av. 1590 - Nossa Senhora do Perpétuo Socorro, 430', 30, 9);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor Pedagógico de Educação Especial','Av. 1590 - Nossa Senhora do Perpétuo Socorro, 430', 30, 9);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Recursos Humanos','Av. 1590 - Nossa Senhora do Perpétuo Socorro, 430', 31, 9);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Planejamento Administrativo e Avaliação','Av. 1590 - Nossa Senhora do Perpétuo Socorro, 430', 30, 9);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Contabilidade, Tesouraria e Orçamento','Av. 1590 - Nossa Senhora do Perpétuo Socorro, 430', 30, 9);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Informática e Sistemas da Educação','Av. 1590 - Nossa Senhora do Perpétuo Socorro, 430', 30, 9);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Incentivo ao Esporte e Alto Rendimento','Rua Walter Crisanto, 5', 35, 10);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Infraestrutura Urbana','Rua Mariana Michels Borges, 201', 37, 11);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Garagem e Oficina','Rua Mariana Michels Borges, 201', 38, 11);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Manutenção','Rua Mariana Michels Borges, 201', 37, 11);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Fiscalização Ambiental','Rua Mariana Michels Borges', 42, 12);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Cartografia e Legislação','Rua Mariana Michels Borges', 45, 13);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Fiscalização','Rua Mariana Michels Borges', 46, 13);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Assistência Farmacêutica','Avenida 877 Dr.ª Zilda Arns Neumann, 1233', 49, 14);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Controle, Avaliação e Auditoria','Avenida 877 Dr.ª Zilda Arns Neumann, 1233', 49, 14);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Compras e Suprimentos','Avenida 877 Dr.ª Zilda Arns Neumann, 1233', 49, 14);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Frotas e Transporte Sanitário','Avenida 877 Dr.ª Zilda Arns Neumann, 1233', 49, 14);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Sistemas e Informática','Avenida 877 Dr.ª Zilda Arns Neumann, 1233', 49, 14);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Vigilância Sanitária e Ambiental','Avenida 877 Dr.ª Zilda Arns Neumann, 1233', 50, 14);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Vigilância Epidemiológica e Saúde do Trabalhador','Avenida 877 Dr.ª Zilda Arns Neumann, 1233', 49, 14);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de PA e SAMU','Avenida 877 Dr.ª Zilda Arns Neumann, 1233', 51, 14);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Saúde Mental','Avenida 877 Dr.ª Zilda Arns Neumann, 1233', 51, 14);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Saúde da Família','Avenida 877 Dr.ª Zilda Arns Neumann, 1233', 52, 14);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Programas e Projetos','Avenida 877 Dr.ª Zilda Arns Neumann, 1233', 52, 14);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Apoio Multiprofissional','Avenida 877 Dr.ª Zilda Arns Neumann, 1233', 52, 14);
+INSERT INTO `setor`(`nomenclatura`, `endereco`, `coordenacao_departamento_iddepartamento`, `coordenacao_departamento_secretaria_idsecretaria`) VALUES ('Setor de Música','Rua Mariana Michels Borges', 60, 16);
+-- fim da tabela Setor
+
+-- início da tabela permissao
+INSERT INTO `permissao`(`nivel`, `nomenclatura`) VALUES (1, 'Usuário');
+INSERT INTO `permissao`(`nivel`, `nomenclatura`) VALUES (2, 'Técnico e Administrativo');
+INSERT INTO `permissao`(`nivel`, `nomenclatura`) VALUES (3, 'Coordenador');
+INSERT INTO `permissao`(`nivel`, `nomenclatura`) VALUES (4, 'Diretor');
+INSERT INTO `permissao`(`nivel`, `nomenclatura`) VALUES (5, 'Administrador');
+-- fim da tabela permissao
+
+-- início da tabela cargo
+INSERT INTO `cargo`(`nomenclatura`) VALUES ('Agente Administrativo');
+INSERT INTO `cargo`(`nomenclatura`) VALUES ('Técnico de Informática');
+INSERT INTO `cargo`(`nomenclatura`) VALUES ('Coordenador');
+INSERT INTO `cargo`(`nomenclatura`) VALUES ('Diretor');
+INSERT INTO `cargo`(`nomenclatura`) VALUES ('Assessor');
+INSERT INTO `cargo`(`nomenclatura`) VALUES ('Secretário');
+-- fim da tabela cargo
+
+-- início da tabela telefone
+INSERT INTO `telefone`(`whatsApp`, `numero`) VALUES (0,'34438802'); -- Administração
+INSERT INTO `telefone`(`whatsApp`, `numero`) VALUES (0,'34438810'); -- Administração
+INSERT INTO `telefone`(`whatsApp`, `numero`) VALUES (0,'34438800'); -- Administração
+INSERT INTO `telefone`(`whatsApp`, `numero`) VALUES (0,'34438870'); --
+INSERT INTO `telefone`(`whatsApp`, `numero`) VALUES (1,'989241885'); -- 
+INSERT INTO `telefone`(`whatsApp`, `numero`) VALUES (0,'34438811');
+INSERT INTO `telefone`(`whatsApp`, `numero`) VALUES (0,'34438812');
+INSERT INTO `telefone`(`whatsApp`, `numero`) VALUES (1,'988493042');
+INSERT INTO `telefone`(`whatsApp`, `numero`) VALUES (0,'34438832'); -- Departamento de Tecnologia da Informação
+INSERT INTO `telefone`(`whatsApp`, `numero`) VALUES (0,'34438864'); -- Departamento de Tecnologia da Informação
+INSERT INTO `telefone`(`whatsApp`, `numero`) VALUES (1,'988272029');
+INSERT INTO `telefone`(`whatsApp`, `numero`) VALUES (0,'34438863');
+INSERT INTO `telefone`(`whatsApp`, `numero`) VALUES (0,'34438865');
+INSERT INTO `telefone`(`whatsApp`, `numero`) VALUES (0,'34438849');
+INSERT INTO `telefone`(`whatsApp`, `numero`) VALUES (1,'989234528');
+INSERT INTO `telefone`(`whatsApp`, `numero`) VALUES (1,'988670664');
+INSERT INTO `telefone`(`whatsApp`, `numero`) VALUES (1,'992728213');
+INSERT INTO `telefone`(`whatsApp`, `numero`) VALUES (0,'34438803');
+INSERT INTO `telefone`(`whatsApp`, `numero`) VALUES (0,'34438804');
+INSERT INTO `telefone`(`whatsApp`, `numero`) VALUES (0,'34438815');
+INSERT INTO `telefone`(`whatsApp`, `numero`) VALUES (0,'34438844');
+INSERT INTO `telefone`(`whatsApp`, `numero`) VALUES (0,'34438843');
+INSERT INTO `telefone`(`whatsApp`, `numero`) VALUES (0,'34438873');
+INSERT INTO `telefone`(`whatsApp`, `numero`) VALUES (1,'47996115955'); -- kleber
+-- término da tabela telefone
+
+-- início da tabela email
+INSERT INTO `email`(`nomenclatura`) VALUES ('kleberjlle@gmail.com');
+INSERT INTO `email`(`nomenclatura`) VALUES ('suporte@itapoa.sc.gov.br');
+INSERT INTO `email`(`nomenclatura`) VALUES ('cti@itapoa.sc.gov.br');
+INSERT INTO `email`(`nomenclatura`) VALUES ('informatica@itapoa.sc.gov.br');
+INSERT INTO `email`(`nomenclatura`) VALUES ('administracao@itapoa.sc.gov.br');
+-- fim da tabela email
+
+-- início da tabela email_has_setor
+INSERT INTO `email_has_setor`(`email_idemail`, `setor_idsetor`) VALUES (2, 24);
+-- fim da tabela email_has_setor
+
+-- início da tabela email_has_coordenacao
+INSERT INTO `email_has_coordenacao`(`email_idemail`, `coordenacao_idcoordenacao`) VALUES (3, 17);
+-- fim da tabela email_has_coordenacao
+
+-- início da tabela email_has_departamento
+INSERT INTO `email_has_departamento` (`email_idemail`, `departamento_iddepartamento`) VALUES (4, 17);
+-- fim da tabela email_has_departamento
+
+-- início da tabela email_has_secretaria
+INSERT INTO `email_has_secretaria`(`email_idemail`, `secretaria_idsecretaria`) VALUES (5,5);
+-- fim da tabela email_has_secretaria
+
+-- início da tabela Usuario
+INSERT INTO `usuario`(`nome`, `sobrenome`, `sexo`, `setor_idsetor`, `coordenacao_idcoordenacao`, `departamento_iddepartamento`, `secretaria_idsecretaria`, `telefone_idtelefone`, `cargo_idcargo`, `email_idemail`, `permissao_idpermissao`) VALUES ('Kleber', 'Pereira de Almeida', 'M', 25, 17, 19, 5, 1, 2, 1, 5);
+-- fim da tabela Usuario
+
+-- início da tabela telefone_has_setor
+INSERT INTO `telefone_has_setor`(`telefone_idtelefone`, `setor_idsetor`) VALUES (9, 24);
+-- fim da tabela telefone_has_setor
+
+-- início da tabela telefone_has_coordenacao
+INSERT INTO `telefone_has_coordenacao`(`telefone_idtelefone`, `coordenacao_idcoordenacao`) VALUES (10, 17);
+-- fim da tabela telefone_has_coordenacao
+
+-- início da tabela telefone_has_departamento
+INSERT INTO `telefone_has_departamento`(`telefone_idtelefone`, `departamento_iddepartamento`) VALUES (9, 19);
+-- fim da tabela telefone_has_departamento
+
+-- início da tabela telefone_has_secretaria
+INSERT INTO `telefone_has_secretaria`(`telefone_idtelefone`, `secretaria_idsecretaria`) VALUES (2, 5);
+-- fim da tabela telefone_has_secretaria
