@@ -1,4 +1,8 @@
 <?php
+require_once '../../sistema/acesso/sConfiguracao.php';
+require_once '../../sistema/acesso/sSecretaria.php';
+
+/*
 use App\sistema\acesso\{
     sConfiguracao,
     sSecretaria,
@@ -13,6 +17,8 @@ use App\sistema\suporte\{
     sLocal,
     sEquipamento
 };
+ *  
+ */
 
 isset($_POST['patrimonio']) ? $patrimonio = true : $patrimonio = false;
 //$categoria = $_POST['categoria'];
@@ -27,9 +33,9 @@ if(!$idEquipamento && $patrimonio){
 }
 
 //instancia classes para manipulação dos dados
-$sConfiguracao = new sConfiguracao();
+$sConfiguracao = new App\sistema\acesso\sConfiguracao();
 
-$sSecretaria = new sSecretaria(0);
+$sSecretaria = new App\sistema\acesso\sSecretaria(0);
 $sSecretaria->consultar('tMenu2_1.php-f1');
 
 $sDepartamento = new sDepartamento(0);

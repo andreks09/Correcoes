@@ -2,10 +2,13 @@
 
 namespace App\modelo;
 
-use App\sistema\acesso\{
+/*use App\sistema\acesso\{
     sNotificacao,
     sConfiguracao
 };
+*/
+require_once '../sistema/acesso/sNotificacao.php';
+require_once '../sistema/acesso/sConfiguracao.php';
 
 class mConexao {
 

@@ -48,7 +48,7 @@ class sConfiguracao{
 
     public function __construct() {
         //Diretórios
-        $this->diretorioPrincipal = 'https://itapoa.app.br/';
+        $this->diretorioPrincipal = 'http://localhost/Correcoes/';
         $this->diretorioDoSistema = 'App/';
         $this->diretorioModelo = 'modelos/';        
         $this->diretorioControleAcesso = $this->diretorioPrincipal.$this->diretorioDoSistema.'sistema/acesso/';
@@ -64,9 +64,9 @@ class sConfiguracao{
         $this->loginLogo = '<b>SS</b>PMI';
         //BD
         $this->hostname = 'localhost';
-        $this->username = 'itapoaap_admin';
-        $this->password = 'pr3f31tur4@2024';
-        $this->database = 'itapoaap_sspmi';
+        $this->username = 'root';
+        $this->password = '';
+        $this->database = 'itapoaapp_sspmi';
         $this->port = 3306;
         $this->socket = '';
         $this->charsetDB = 'utf8';

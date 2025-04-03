@@ -1,8 +1,9 @@
 <?php
 namespace App\sistema\acesso;
 
-use App\modelo\{mConexao};
+//use App\modelo\{mConexao};
 
+require_once '../../modelo/mConexao.php';
 class sSecretaria {
     private int $idSecretaria;
     private string $nomenclatura;
@@ -17,7 +18,7 @@ class sSecretaria {
     }
     
     public function consultar($pagina) {
-        $this->setMConexao(new mConexao());
+        $this->mConexao(new \App\modelo\mConexao());
         if( $pagina == 'tMenu1_3.php'){                            
             $dados = [
                 'comando' => 'SELECT',
