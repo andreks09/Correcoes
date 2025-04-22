@@ -83,6 +83,11 @@ if (isset($_POST['formulario'])) {
     if(!$meusDados){
         $sTratamentoTelefone = new sTratamentoDados($telefone);
         $telefoneTratado = $sTratamentoTelefone->tratarTelefone();
+        
+        if(!$telefoneTratado){
+            header("Location: {$sConfiguracao->getDiretorioVisualizacaoAcesso()}tPainel.php?menu=2_1_1&campo=telefone&codigo=A11");
+            exit();           
+        }
     }else{
         $telefoneTratado = $telefone;
     }    

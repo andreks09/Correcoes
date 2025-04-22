@@ -54,32 +54,38 @@ class sTratamentoDados {
 
     public function tratarTelefone() {
         if (!ctype_alnum($this->getDados())) {
-            $telefoneTratado = str_replace(['(', ')', '-', '_', ' '], '', $this->getDados());
+           $mascara = str_replace(['(', ')', '-', '_', ' '], '', $this->getDados());
         } else {
-            $telefoneTratado = str_replace(" ", "", $this->getDados());
+            $numero = str_replace(" ", "", $this->getDados());
             //se for número de telefone fixo
-            if (strlen($telefoneTratado) == 10) {
-                $mascara = "(##) ####-####";
-            } else {
+            if (strlen($numero) == 10) {
+                $numero = "(##) ####-####";
+            } else if (strlen($numero) == 11){
                 //se for número de telefone celular
-                $mascara = "(##) # ####-####";
+                $numero = "(##) # ####-####";
+            }else{
+                $numero == false;
             }
-            for ($i = 0; $i < strlen($telefoneTratado); $i++) {
-                $mascara[strpos($mascara, "#")] = $telefoneTratado[$i];
+            if($numero){
+                for ($i = 0; $i < strlen($numero); $i++) {
+                    $mascara[strpos($numero, "#")] = $numero[$i];
+                }                    
             }
-            $telefoneTratado = $mascara;
-        }
-        return $telefoneTratado;
-    }
 
-    public function tratarEtiquetaDeServico() {
-        if (empty($this->getDados())) {
-            $etiquetaDeServico = 'Indefinida';
-        } else {
-            $etiquetaDeServico = $this->getDados();
         }
-        return $etiquetaDeServico;
+        return $mascara;
+                
+        
     }
+        
+        public function tratarEtiquetaDeServico() {
+            if (empty($this->getDados())) {
+                $etiquetaDeServico = 'Indefinida';
+            } else {
+                $etiquetaDeServico = $this->getDados();
+            }
+            return $etiquetaDeServico;
+        }
 
     public function tratarNumeroDeSerie() {
         if (empty($this->getDados())) {

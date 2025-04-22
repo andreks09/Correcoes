@@ -2,13 +2,10 @@
 
 namespace App\modelo;
 
-/*use App\sistema\acesso\{
+use App\sistema\acesso\{
     sNotificacao,
     sConfiguracao
 };
-*/
-require_once '../sistema/acesso/sNotificacao.php';
-require_once '../sistema/acesso/sConfiguracao.php';
 
 class mConexao {
 
@@ -22,12 +19,12 @@ class mConexao {
     public function __construct() {
         $this->sConfiguracao = new sConfiguracao();
         $this->setConexao(new \mysqli(
-                        $this->sConfiguracao->getHostname(),
-                        $this->sConfiguracao->getUsername(),
-                        $this->sConfiguracao->getPassword(),
-                        $this->sConfiguracao->getDatabase(),
-                        $this->sConfiguracao->getPort(),
-                        $this->sConfiguracao->getSocket()
+            $this->sConfiguracao->getHostname(),
+            $this->sConfiguracao->getUsername(),
+            $this->sConfiguracao->getPassword(),
+            $this->sConfiguracao->getDatabase(),
+            $this->sConfiguracao->getPort(),
+            $this->sConfiguracao->getSocket()
         ));
         mysqli_set_charset($this->conexao, $this->sConfiguracao->getCharsetDB());
         $this->validador = false;

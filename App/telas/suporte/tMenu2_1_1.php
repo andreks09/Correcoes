@@ -1,8 +1,4 @@
 <?php
-require_once '../../sistema/acesso/sConfiguracao.php';
-require_once '../../sistema/acesso/sSecretaria.php';
-
-/*
 use App\sistema\acesso\{
     sConfiguracao,
     sSecretaria,
@@ -17,8 +13,6 @@ use App\sistema\suporte\{
     sLocal,
     sEquipamento
 };
- *  
- */
 
 isset($_POST['patrimonio']) ? $patrimonio = true : $patrimonio = false;
 //$categoria = $_POST['categoria'];
@@ -33,9 +27,9 @@ if(!$idEquipamento && $patrimonio){
 }
 
 //instancia classes para manipulação dos dados
-$sConfiguracao = new App\sistema\acesso\sConfiguracao();
+$sConfiguracao = new sConfiguracao();
 
-$sSecretaria = new App\sistema\acesso\sSecretaria(0);
+$sSecretaria = new sSecretaria(0);
 $sSecretaria->consultar('tMenu2_1.php-f1');
 
 $sDepartamento = new sDepartamento(0);
@@ -92,6 +86,13 @@ if (isset($_GET['campo'])) {
                 $alertaEmail = ' is-warning';
             }
             break;
+        case 'telefone':
+            if ($_GET['codigo'] == 'S4') {
+                $alertaTelefone = ' is-valid';
+            } else {
+                $alertaTelefone = ' is-warning';
+            }
+            break;
     }
     
     //cria as variáveis da notificação
@@ -115,7 +116,7 @@ if (isset($_GET['campo'])) {
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                                        <input type="checkbox" class="custom-control-input" id="meusDados" name="meusDados" checked="checked" value="1" onclick="decisao();" form="f2">
+                                        <input type="checkbox" class="custom-control-input" id="meusDados" name="meusDados" <?php echo isset($alertaTelefone) ? '' : 'checked=\"checked\"'; ?> value="1" onclick="decisao();" form="f2">
                                         <label class="custom-control-label" for="meusDados">
                                             <div class="conteudo" name="conteudo" id="conteudo">
                                                 Utilizar meus dados para a solicitação do suporte
@@ -188,7 +189,7 @@ if (isset($_GET['campo'])) {
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label>Telefone</label>
-                                    <input type="text" class="form-control" id="telefone" name="telefone" required="" disabled="" placeholder="(99) 9 9999-9999" data-inputmask='"mask": "(99) 9 9999-9999"' data-mask inputmode="text" form="f2">
+                                    <input type="text" class="form-control<?php echo isset($alertaTelefone) ? $alertaTelefone : ''; ?>" id="telefone" name="telefone" required="" disabled="" placeholder="(99) 9 9999-9999" data-inputmask='"mask": "(99) 9 9999-9999"' data-mask inputmode="text" form="f2">
                                 </div>
                                 <div class="col-md-2">
                                     <div class="form-group">
@@ -291,11 +292,10 @@ if (isset($_GET['campo'])) {
                         </div>
                     </div>
                     <?php
+                    //exibir notificação
                         if (isset($tipo) &&
                             isset($titulo) &&
-                            isset($mensagem)) {
-                            if (isset($alertaSecretaria) ||
-                                isset($alertaEmail)) {
+                            isset($mensagem)) {                           
                             echo <<<HTML
                             <div class="col-mb-3">
                                 <div class="card card-outline card-{$tipo}">
@@ -309,7 +309,6 @@ if (isset($_GET['campo'])) {
                             </div>
 HTML;
                             }
-                        }
                     ?>
                 <form action="<?php echo $sConfiguracao->getDiretorioControleSuporte(); ?>sSolicitarSuporte.php" method="post" enctype="multipart/form-data" name="f2" id="f2">
                     <!-- /.card-body -->
