@@ -46,18 +46,18 @@
                             <h3 class="card-title">Leia os Termos e Condições abaixo:</h3>
                         </div>
                         <div class="card-body">
-                            <h4>1. INTRODUÇÃO</h4>
+                            <h6>1. Introdução</h6>
                             <p>Esse Termo de Uso regula o acesso e a utilização do SSPMI (Solicitação de Suporte da Prefeitura Municipal de Itapoá) aos servidores e prestadores de serviços da Prefeitura de Itapoá, com o objetivo de fornecer suporte para a abertura e gestão de <i>tickets</i> para a solução de problemas técnicos relacionados a tecnologia da informação.</p>
                             <p>Ao acessar e utilizar o SSPMI, o usuário concorda com as disposições desse Termo de Uso. Caso não concorde com os termos aqui estabelecidos, o acesso ao sistema deve ser imediatamente interrompido.</p>
 
-                            <h4>2. OBJETIVO</h4>
+                            <h6>2. Objetivo</h6>
                             <p>O SSPMI tem como finalidade principal a gestão e acompanhamento de solicitações de suporte técnico, possibilitando a abertura de <i>tickets</i>, o acompanhamento do status das solicitações e a comunicação entre os usuários e a equipe de suporte.</p>
 
-                            <h4>3. QUEM PODE UTILIZAR O SERVIÇO</h4>
+                            <h6>3. Quem pode ultilizar o serviço</h6>
                             <p>O SSPMI está disponível para:</p>
                             <p><b>3.1.</b> Servidores públicos e funcionários contratados ou de empresa terceirizada do executivo municipal de Itapoá que necessitem de suporte técnico para a resolução de problemas com sistemas e processos internos relacionados a informática.</p>
 
-                            <h4>4. RESPONSABILIDADES DO USUÁRIO</h4>
+                            <h6>4. Responsabilidade do usuário</h6>
                             <p>O usuário compromete-se a:</p>
                             <p><b>4.1.</b> Utilizar o SSPMI exclusivamente para os fins previstos, relacionados à abertura de <i>tickets</i> e ao acompanhamento de solicitações de suporte.</p>
                             <p><b>4.2.</b> Fornecer informações corretas, claras e precisas ao abrir um <i>ticket</i>, de modo a garantir que o problema seja tratado de forma eficaz.</p>
@@ -68,32 +68,32 @@
                             <p><b>4.7.</b> Não modificar, traduzir, criar trabalhos derivados, nem aplicar engenharia reversa nos produtos e componentes do SSPMI. O acesso ao sistema é restrito ao uso conforme as funcionalidades previstas e expressamente autorizadas.</p>
                             <p><b>4.8.</b> Respeitar a legislação vigente e as normas internas da Prefeitura de Itapoá ao utilizar o SSPMI.</p>
 
-                            <h4>5. RESPONSABILIDADES DA PREFEITURA DE ITAPOÁ</h4>
+                            <h6>5. Responsabilidades da Prefeitura de Itapoá</h6>
                             <p>O Departamento de Tecnologia da Informação, por meio do SSPMI, compromete-se a:</p>
                             <p><b>5.1.</b> Oferecer um sistema de suporte eficiente para a abertura e acompanhamento de <i>tickets</i>, com o objetivo de resolver problemas técnicos de forma tempestiva.</p>
                             <p><b>5.2.</b> Manter a confidencialidade das informações compartilhadas pelos usuários durante a abertura e o acompanhamento de <i>tickets</i>, conforme a política de privacidade e as normas legais aplicáveis.</p>
                             <p><b>5.3.</b> Fornecer um canal de comunicação transparente e eficiente entre os usuários e a equipe de suporte.</p>
                             <p><b>5.4.</b> Gerar relatórios quando solicitado para atender a demandas administrativas.</p>
 
-                            <h4>6. POLÍTICA DE PRIVACIDADE</h4>
+                            <h6>6. Política de privacidade</h6>
                             <p>O Departamento da Tecnologia da Informação compromete-se a proteger a privacidade dos usuários ao acessar o SSPMI. As informações fornecidas pelos usuários durante a abertura de <i>tickets</i> serão tratadas conforme a legislação de proteção de dados pessoais aplicável, incluindo a Lei Geral de Proteção de Dados Pessoais (LGPD), e serão utilizadas exclusivamente para os fins relacionados ao suporte solicitado ou para apurar fatos que decorram de processos administrativos.</p>
 
-                            <h4>7. LIMITAÇÃO DE RESPONSABILIDADE</h4>
+                            <h6>7. Limitação de responsabilidade</h6>
                             <p><b>7.1.</b> A Prefeitura de Itapoá não se responsabiliza por eventuais problemas decorrentes do uso indevido do Portal SSPMI por parte dos usuários.</p>
                             <p><b>7.2.</b> A Prefeitura de Itapoá não garante a solução imediata de todos os problemas, uma vez que a resolução depende da complexidade das solicitações e dos recursos disponíveis para a equipe de suporte.</p>
                             <p><b>7.3.</b> A Prefeitura de Itapoá não será responsável por danos diretos ou indiretos causados pelo uso do SSPMI, incluindo perda de dados ou falhas no sistema que afetem a operação de outros sistemas internos da Prefeitura de Itapoá.</p>
 
-                            <h4>8. ALTERAÇÕES E ATUALIZAÇÕES</h4>
+                            <h6>8. Alterações e atualizações</h6>
                             <p>A Prefeitura de Itapoá se reserva o direito de modificar, atualizar ou alterar este Termo de Uso a qualquer momento, sem aviso prévio. Alterações significativas serão informadas aos usuários por meio de publicação no próprio sistema ou por outro meio de comunicação apropriado.</p>
 
-                            <h4>9. VIGÊNCIA</h4>
+                            <h6>9. Vigência</h6>
                             <p>Este Termo de Uso entra em vigor na data de sua publicação e permanecerá válido enquanto o usuário utilizar o SSPMI.</p>
 
-                            <h4>10. DISPOSIÇÕES FINAIS</h4>
+                            <h6>10. Disposições finais</h6>
                             <p><b>10.1.</b> O não cumprimento de qualquer uma das disposições deste Termo de Uso pode resultar em processo administrativo.</p>
                             <p><b>10.2.</b> Qualquer dúvida ou questionamento sobre este Termo de Uso deve ser direcionado à equipe de suporte do Departamento da Tecnologia da Informação, por meio dos canais de comunicação oficiais.</p>
 
-                            <h4>12. USO DE COOKIES</h4>
+                            <h6>12. Uso de Cookies</h6>
                             <p><b>12.1.</b> Como usamos os <i>cookies?</i></p>
                             <p>O SSPMI utiliza <i>cookies</i> para:</p>
                             <p>Melhorar a navegação: tornando o uso mais eficiente e agradável.</p>
@@ -107,12 +107,6 @@
 
                             <p><b>12.5.</b> Alterações no uso de <i>cookies</i></p>
                             <p>O Departamento da Tecnologia da Informação se reserva o direito de alterar a forma como utiliza cookies no Sistema SSPMI, sendo qualquer modificação comunicada aos usuários.</p>
-
-                            <div class="form-check mt-4">
-                                <input class="form-check-input" type="checkbox" id="agreeTerms">
-                                <label class="form-check-label" for="agreeTerms">
-                                    Eu aceito os termos de uso
-                                </label>
                             </div>
                         </div>
                         <div class="card-footer">

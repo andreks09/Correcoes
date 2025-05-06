@@ -52,31 +52,21 @@ class sTratamentoDados {
         return $dataTratada;
     }
 
-    public function tratarTelefone() {
-        if (!ctype_alnum($this->getDados())) {
-           $mascara = str_replace(['(', ')', '-', '_', ' '], '', $this->getDados());
-        } else {
-            $numero = str_replace(" ", "", $this->getDados());
-            //se for número de telefone fixo
-            if (strlen($numero) == 10) {
-                $numero = "(##) ####-####";
-            } else if (strlen($numero) == 11){
-                //se for número de telefone celular
-                $numero = "(##) # ####-####";
-            }else{
-                $numero == false;
-            }
-            if($numero){
-                for ($i = 0; $i < strlen($numero); $i++) {
-                    $mascara[strpos($numero, "#")] = $numero[$i];
-                }                    
-            }
+public function tratarTelefone() {
+    $dados = preg_replace('/[^0-9]/', '', $this->getDados()); // Remove tudo que não for número
 
-        }
-        return $mascara;
-                
-        
+    if (strlen($dados) == 10) {
+        // Formata telefone fixo (10 dígitos)
+        $mascara = '(' . substr($dados, 0, 2) . ') ' . substr($dados, 2, 4) . '-' . substr($dados, 6);
+    } elseif (strlen($dados) == 11) {
+        // Formata telefone celular (11 dígitos)
+        $mascara = '(' . substr($dados, 0, 2) . ') ' . substr($dados, 2, 1) . ' ' . substr($dados, 3, 4) . '-' . substr($dados, 7);
+    } else {
+        $mascara = false; // Número inválido
     }
+
+    return $mascara;
+}
         
         public function tratarEtiquetaDeServico() {
             if (empty($this->getDados())) {
