@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'vendor/correcoes',
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
-        'reference' => 'f1bf8b1f45bde69280dee7469ec1b8f7452870d1',
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
+        'reference' => null,
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -287,9 +287,9 @@
             'dev_requirement' => false,
         ),
         'vendor/correcoes' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'reference' => 'f1bf8b1f45bde69280dee7469ec1b8f7452870d1',
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
+            'reference' => null,
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
