@@ -32,7 +32,7 @@
                             Ao acessar e utilizar o SSPMI, o usuário concorda com as disposições desse Termo de Uso. Caso não concorde com os termos aqui estabelecidos, o acesso ao sistema deve ser imediatamente interrompido.</p></li></ul>
 
                             <h6 class="font-weight-bold">2. Objetivo</h6>
-                            <p>O SSPMI tem como finalidade principal a gestão e acompanhamento de solicitações de suporte técnico, possibilitando a abertura de <i>tickets</i>, o acompanhamento do status das solicitações e a comunicação entre os usuários e a equipe de suporte.</p>
+                            <p>O SSPMI tem como finalidade principal a gestão e acompanhamento de solicitações de suporte técnico, possibilitando a abertura de <i>tickets</i>, o acompanhamento do <i>status</i> das solicitações e a comunicação entre os usuários e a equipe de suporte.</p>
 
                             <h6 class="font-weight-bold">3. Quem pode ultilizar o serviço</h6>
                             <p>O SSPMI está disponível para:<br>
@@ -54,7 +54,7 @@
                             Oferecer um sistema de suporte eficiente para a abertura e acompanhamento de <i>tickets</i>, com o objetivo de resolver problemas técnicos de forma tempestiva.<br>
                             Manter a confidencialidade das informações compartilhadas pelos usuários durante a abertura e o acompanhamento de <i>tickets</i>, conforme a política de privacidade e as normas legais aplicáveis.<br>
                             Fornecer um canal de comunicação transparente e eficiente entre os usuários e a equipe de suporte.<br>
-                            Gerar relatórios quando solicitado para atender a demandas administrativas.<br>
+                            Gerar relatórios quando solicitado para atender as demandas administrativas.<br>
                             <h6 class="font-weight-bold">6. Política de privacidade</h6>
                             <p>O Departamento da Tecnologia da Informação compromete-se a proteger a privacidade dos usuários ao acessar o SSPMI. As informações fornecidas pelos usuários durante a abertura de <i>tickets</i> serão tratadas conforme a legislação de proteção de dados pessoais aplicável, incluindo a Lei Geral de Proteção de Dados Pessoais (LGPD), e serão utilizadas exclusivamente para os fins relacionados ao suporte solicitado ou para apurar fatos que decorram de processos administrativos.</p>
 
@@ -70,18 +70,14 @@
                             <p>Este Termo de Uso entra em vigor na data de sua publicação e permanecerá válido enquanto o usuário utilizar o SSPMI.</p>
 
                             <h6 class="font-weight-bold">10. Disposições finais</h6>
-                            <p>O não cumprimento de qualquer uma das disposições deste Termo de Uso pode resultar em processo administrativo.<br>
+                            <p>O não cumprimento de qualquer uma das disposições deste Termo de Uso poderá resultar em processo administrativo.<br>
                             Qualquer dúvida ou questionamento sobre este Termo de Uso deve ser direcionado à equipe de suporte do Departamento da Tecnologia da Informação, por meio dos canais de comunicação oficiais.</p>
 
                             <h6 class="font-weight-bold">12. Uso de <i>cookies</i></h6>
-                            <p>Como usamos os <i>cookies?</i><br>
-                            O SSPMI utiliza <i>cookies</i> para:<br>
-                            Melhorar a navegação, tornando o uso mais eficiente e agradável.<br>
-                            Autenticações e segurança, os <i>Cookies</i> podem ser utilizados para armazenar informações de login e garantir que o usuário tenha acesso a suas solicitações de suporte de maneira segura.</p>
+                            <p>O SSPMI utiliza <i>cookies</i> para:<br>
+                            Autenticações e segurança, os <i>cookies</i> podem ser utilizados para armazenar informações de login e garantir que o usuário tenha acesso a suas solicitações de suporte de maneira segura.</p>
                             
-                            <p>Análise: Utilizamos <i>cookies</i> para coletar informações sobre o uso do sistema, como, pagina do SSPMI acessada, IP, navegador, desempenho e sistema operacional.<br>
-                            Os usuários podem configurar seus navegadores para aceitar ou rejeitar <i>cookies</i>, ou para ser notificados sempre que um <i>cookie</i> for enviado. A maioria dos navegadores permite que o usuário aceite ou recuse os cookies por padrão.<br>
-                            Consentimento para o uso de cookies<br>
+                            <p>Utilizamos <i>cookies</i> para coletar informações sobre o uso do sistema, como, página do SSPMI acessada, endereço de IP, dados do navegador, desempenho e sistema operacional do computador.<br>
                             Ao acessar e utilizar o SSPMI, o usuário concorda com o uso de <i>cookies</i> conforme descrito neste Termo de Uso.</p>
 
                              <h6 class="font-weight-bold">13. Alterações no uso de <i>cookies</i></h6>
