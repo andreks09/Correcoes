@@ -101,6 +101,7 @@ if (isset($_GET['campo'])) {
     $mensagem = $sNotificacao->getMensagem();
 }
 ?>
+
 <div class="container-fluid">
     <div class="row">
         <!-- left column -->
@@ -111,22 +112,25 @@ if (isset($_GET['campo'])) {
                     <h3 class="card-title">Etapa 1 - Solicitante</h3>
                 </div>
                 <!-- form start -->
+                <?php
+
+?>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
-                                        <input type="checkbox" class="custom-control-input" id="meusDados" name="meusDados" <?php echo isset($alertaTelefone) ? '' : 'checked=\"checked\"'; ?> value="1" onclick="decisao();" form="f2">
+                                        <input type="checkbox" class="custom-control-input" id="meusDados" name="meusDados" <?php echo isset($alertaTelefone) ? '' : 'checked=\"checked\"'; ?> onclick="decisao();" form="f2">
                                         <label class="custom-control-label" for="meusDados">
                                             <div class="conteudo" name="conteudo" id="conteudo">
-                                                Utilizar meus dados para a solicitação do suporte
+                                                Utilizar meus dados
                                             </div>
                                         </label>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12" name="ocultarCampos" id="ocultarCampos" style="display: none;">
+                        <div class="col-md-12" name="ocultarCampos" id="ocultarCampos" <?php echo isset($alertaTelefone) ? "" : "style=\"display: none;\"" ?>">
                             <div class="row">
                                 <div class="col-md-2">
                                     <div class="form-group">
@@ -325,6 +329,24 @@ HTML;
         </div>
     </div>
 </div>
+<?php
+if(isset($alertaTelefone)){
+echo "<script>
+        window.onload = function decisao() {            
+            document.getElementById('conteudo').innerHTML = 'Utilizar dados de outra pessoa';
+            document.getElementById('secretaria').disabled = false;
+            document.getElementById('departamento').disabled = false;
+            document.getElementById('coordenacao').disabled = false;
+            document.getElementById('setor').disabled = false;
+            document.getElementById('nome').disabled = false;
+            document.getElementById('sobrenome').disabled = false;
+            document.getElementById('telefone').disabled = false;
+            document.getElementById('whatsApp').disabled = false;
+            document.getElementById('email').disabled = false;
+        };
+    </script>";
+}
+?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript">
     //habilita/ desabilita campos ao ativar/ desativar checkbox
@@ -425,6 +447,5 @@ HTML;
         } else {
             document.getElementById('descricao').value = valor.substr(0,quant);
         }
-    }
-   
+    }   
 </script>
