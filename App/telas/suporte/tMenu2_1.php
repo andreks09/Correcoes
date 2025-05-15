@@ -41,6 +41,14 @@ if (isset($_GET['campo'])) {
     $mensagem = $sNotificacao->getMensagem();
 }
 
+//se clicou em alterar equipamento lá na página tMenu2_2_1 (tickets já abertos)
+if(isset($_POST['menu'])){
+    if($_POST['menu'] == '2_2_1'){
+        $menu = $_POST['menu'];
+        $idProtocolo = $_POST['idProtocolo'];
+    }
+}
+
 $sEquipamento = new sEquipamento();
 $sEquipamento->consultar('tMenu2_1.php');
 
@@ -224,13 +232,24 @@ HTML;
                 </div>
                 <form action="<?php echo $sConfiguracao->getDiretorioVisualizacaoAcesso(); ?>tPainel.php?menu=2_1_1" method="post" enctype="multipart/form-data" name="f1" id="f1">
                     <input type="hidden" value="f1" name="formulario" id="formulario" form="f1">
-                    <input type="hidden" value="inserir" name="acao" id="inserir" form="f1">
-                    <input type="hidden" value="menu2_1" name="pagina" id="menu2_1" form="f1">
-
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Próximo</button>
-                    </div>
+                    <input type="hidden" value="inserir" name="acao" id="acao" form="f1">
+                    <input type="hidden" value="menu2_1" name="pagina" id="menu2_1" form="f1">                    
                 </form>
+                <form action="<?php echo $sConfiguracao->getDiretorioVisualizacaoAcesso(); ?>tPainel.php?menu=2_1_1" method="post" enctype="multipart/form-data" name="f2" id="f2">
+                    <input type="hidden" value="alterar" name="acao" id="acao" form="f2">
+                    <input type="hidden" value="menu2_1" name="pagina" id="menu2_1" form="f2"> 
+                    <input type="hidden" value="<?php echo $idProtocolo; ?>" name="idProtocolo" id="idProtocolo" form="f2"> 
+                </form>
+                <div class="card-footer">
+                    <?php
+                    if(isset($menu)){
+                        echo "<button type=\"submit\" class=\"btn btn-primary\" form=\"f2\">Alterar</button>";
+                    }else{
+                        echo "<button type=\"submit\" class=\"btn btn-primary\" form=\"f1\">Próximo</button>";
+                    }
+                    ?>
+
+                </div>
                 <!-- /.card -->
             </div>
         </div>

@@ -643,9 +643,9 @@ echo <<<HTML
                     </ul>
                 </div>
                 <div class="card-footer"> 
-                    <form action="{$sConfiguracao->getDiretorioVisualizacaoAcesso()}tPainel.php?menu=3_2_1" name="f2" id="f2" method="post">
-                        <input type="hidden" name="menu" value="3_2_1" form="f2">
-                        <input type="hidden" name="idEquipamento" value="{$idEquipamento}" form="f2">
+                    <form action="{$sConfiguracao->getDiretorioVisualizacaoAcesso()}tPainel.php?menu=2_1" name="f2" id="f2" method="post">
+                        <input type="hidden" name="menu" value="2_2_1" form="f2">
+                        <input type="hidden" name="idProtocolo" value="{$idProtocolo}" form="f2">
 HTML;
 if ($_SESSION['credencial']['nivelPermissao'] > 1) {
     echo <<<HTML

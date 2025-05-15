@@ -78,11 +78,11 @@
                         </p>
                         <h6 class="font-weight-bold">9.Vigência</h6>
                         <p>
-                            Este Termo de Uso entra em vigor na data de sua publicação e permanecerá válido enquanto o usuário utilizar o SSPMI.
+                            Esse Termo de Uso entra em vigor na data de sua publicação e permanecerá válido enquanto o usuário utilizar o SSPMI.
                         </p>
                         <h6 class="font-weight-bold">10. Disposições finais</h6>
                         <p>
-                            O não cumprimento de qualquer uma das disposições deste Termo de Uso poderá resultar em processo administrativo.<br>
+                            O não cumprimento de qualquer uma das disposições desse Termo de Uso poderá resultar em processo administrativo.<br>
                             Qualquer dúvida ou questionamento sobre este Termo de Uso deve ser direcionado à equipe de suporte do Departamento da Tecnologia da Informação, por meio dos canais de comunicação oficiais.
                         </p>
                         <h6 class="font-weight-bold">12. Uso de <i>cookies</i></h6>
