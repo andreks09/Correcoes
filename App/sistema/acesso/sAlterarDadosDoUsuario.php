@@ -101,7 +101,7 @@ if (isset($_POST['pagina'])) {
         alimentaHistorico($pagina, $acao, 'senha', $senha, $senhaCriptografada, $idUsuario);
     }
     
-    //se existir um telefone registrado
+    //validar telefone
     $sTratamentoTelefone = new sTratamentoDados($telefone);
     $telefoneUsuario = $sTratamentoTelefone->tratarTelefone();
     
@@ -148,7 +148,7 @@ if (isset($_POST['pagina'])) {
     }
     
     $_SESSION['credencial']['telefoneUsuario'] == '--' ? $telefoneSessao = '' : $telefoneSessao = $_SESSION['credencial']['telefoneUsuario'];
-    if ($telefoneSessao != $telefoneUsuario) {
+    if ($telefoneSessao != $telefoneUsuario) {        
         //validação do conteúdo
         $sTelefoneUsuario->verificarTelefone($telefoneUsuario);
         if (!$sTelefoneUsuario->getValidador()) {

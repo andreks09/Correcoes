@@ -53,37 +53,18 @@ class sTratamentoDados {
     }
 
     public function tratarTelefone() {
-        if(is_numeric($this->getDados())){
-            $dados = preg_replace('/[^0-9]/', '', $this->getDados()); // Remove tudo que não for número
-        }else{
-            $telefone = preg_replace('/[^0-9]/', '', $this->getDados()); // Remove tudo que não for número
-            //se for número de telefone fixo
-            if (strlen($telefone) == 10) {
-                $mascara = "(##) ####-####";
-            } else if(strlen($telefone) == 11) {
-                //se for número de telefone celular
-                $mascara = "(##) # ####-####";
-            }else{
-                $mascara = false;
-            }
-            if($mascara){
-                for ($i = 0; $i < strlen($telefone); $i++) {
-                    $mascara[strpos($mascara, "#")] = $telefone[$i];
-                }                
-            }            
-            $dados = $mascara;
-        }
+        $dados = preg_replace('/[^0-9]/', '', $this->getDados()); // Remove tudo que não for número
         return $dados;
     }
         
-        public function tratarEtiquetaDeServico() {
-            if (empty($this->getDados())) {
-                $etiquetaDeServico = 'Indefinida';
-            } else {
-                $etiquetaDeServico = $this->getDados();
-            }
-            return $etiquetaDeServico;
+    public function tratarEtiquetaDeServico() {
+        if (empty($this->getDados())) {
+            $etiquetaDeServico = 'Indefinida';
+        } else {
+            $etiquetaDeServico = $this->getDados();
         }
+        return $etiquetaDeServico;
+    }
 
     public function tratarNumeroDeSerie() {
         if (empty($this->getDados())) {

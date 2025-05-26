@@ -14,7 +14,8 @@ use App\sistema\acesso\{
     sDepartamento,
     sCoordenacao,
     sSetor,
-    sTratamentoDados
+    sTratamentoDados,
+    sTelefone
 };
 
 use App\sistema\suporte\{
@@ -82,14 +83,18 @@ if (isset($_POST['formulario'])) {
     //trata os dados para inserção no bd
     if(!$meusDados){
         $sTratamentoTelefone = new sTratamentoDados($telefone);
-        $telefoneTratado = $sTratamentoTelefone->tratarTelefone();
-        if(!$telefoneTratado){
+        echo $telefoneTratado = $sTratamentoTelefone->tratarTelefone();
+        
+        $sTelefone = new sTelefone(0, 0, '');
+        $sTelefone->verificarTelefone($telefoneTratado);   
+        
+        if(!$sTelefone->getValidador()){
             header("Location: {$sConfiguracao->getDiretorioVisualizacaoAcesso()}tPainel.php?menu=2_1_1&campo=telefone&codigo=A11");
             exit();           
         }
     }else{
         $telefoneTratado = $telefone;
-    }    
+    } 
     
     //trata os dados para inserção no bd
     $sTratamentoEmail = new sTratamentoDados($email);

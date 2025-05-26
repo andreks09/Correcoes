@@ -109,7 +109,7 @@ if (isset($_GET['campo'])) {
             <!-- general form elements -->
             <div class="card card-primary card-outline">
                 <div class="card-header">
-                    <h3 class="card-title">Etapa 1 - Solicitante</h3>
+                    <h3 class="card-title">Etapa 2 - Solicitante e Descrição do problema</h3>
                 </div>
                 <!-- form start -->
                 <?php

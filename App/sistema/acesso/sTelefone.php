@@ -208,6 +208,7 @@ class sTelefone {
     }
 
     public function verificarTelefone($telefone) {
+        echo $telefone;
         if (strlen($telefone) < 10 ||
             strlen($telefone) > 11) {
             $this->setSNotificacao(new sNotificacao('A11'));
