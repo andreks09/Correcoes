@@ -112,9 +112,6 @@ if (isset($_GET['campo'])) {
                     <h3 class="card-title">Etapa 2 - Solicitante e Descrição do problema</h3>
                 </div>
                 <!-- form start -->
-                <?php
-
-?>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12">
