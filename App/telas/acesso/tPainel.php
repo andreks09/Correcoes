@@ -2,9 +2,6 @@
 //necessário para chamar headers(Location) após linhas html (caso contrário gera erro de output)
 ob_start();
 
-//inicia as sessões do sistema
-session_start();
-
 //chama o caminho do autoload para carregamento dos arquivos
 require_once '../../../vendor/autoload.php';
 
@@ -16,6 +13,15 @@ use App\sistema\acesso\{
     sNotificacao
 };
 
+//configurações do sistema
+$sConfiguracao = new sConfiguracao();
+
+ini_set('session.gc_maxlifetime', $sConfiguracao->getTempoCookie());
+session_set_cookie_params(lifetime_or_options: $sConfiguracao->getTempoCookie(), httponly: true);
+
+//inicia as sessões do sistema
+session_start();
+
 //verifica se tem credencial para acessar o sistema
 if(!isset($_SESSION['credencial'])){
     //solicitar saída com tentativa de violação
@@ -23,8 +29,6 @@ if(!isset($_SESSION['credencial'])){
     $sSair->verificar('0');
 }
 
-//configurações do sistema
-$sConfiguracao = new sConfiguracao();
 //verifica se o sistema entrou em manutenção e se o usuário não tem permissão para acessar durante a manutenção
 if($sConfiguracao->getManutencao() && $_SESSION['credencial']['nivelPermissao'] < 5){
     header("Location: {$sConfiguracao->getDiretorioVisualizacaoAcesso()}tAcessar.php?seguranca={$sConfiguracao->getManutencao()}");

@@ -1,14 +1,34 @@
-
-    <div class="callout callout-info">
-        <h5>Correção de bug - Alteração de senha e telefone</h5>
-        <p>
-            Versão: 2.8.2-beta (pós teste);<br />
-            Locais: telas 1_1_1 e 2_1_1;<br />
-            Campos: telefone, senha;<br />
-            Data: 26/05/2025;<br />                
-            Reclamação: Não consigo alterar minha senha<br />  
-            Solução: Alterado lógica do método de tratamento e verificação do número do telefone<br />   
-        </p>
+<div class="card card-default">
+    <div class="card-header">         
+        <h3 class="card-title">
+            <i class="fas fa-bullhorn"></i>
+            Informativo
+        </h3>
+    </div>
+        <div class="card-body">
+            <div class="callout callout-info">
+                <h5>Alteração - Tempo de expiração da sessão</h5>
+                <p>
+                    Versão: 2.8.2-beta (pós teste);<br />
+                    Locais: tPainel;<br />
+                    Campos: --;<br />
+                    Data: 03/06/2025;<br />                
+                    Reclamação: Pouco tempo para acompanhar os tickets<br />  
+                    Solução: Alterado tempo do Garbage Collector e parâmetros dos Cookies<br />   
+                </p>
+            </div>
+            <div class="callout callout-warning">
+                <h5>Correção - Senha e telefone</h5>
+                <p>
+                    Versão: 2.8.2-beta (pós teste);<br />
+                    Locais: telas 1_1_1 e 2_1_1;<br />
+                    Campos: telefone, senha;<br />
+                    Data: 26/05/2025;<br />                
+                    Reclamação: Não consigo alterar minha senha<br />  
+                    Solução: Alterado lógica do método de tratamento e verificação do número do telefone<br />   
+                </p>
+            </div>
+        </div>
     </div>
         <!--
         <div class="callout callout-info">

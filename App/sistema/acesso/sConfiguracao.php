@@ -34,6 +34,7 @@ class sConfiguracao{
     private $letra;
     private $numero;
     private $caracterEspecial;
+    private $tempoCookie;
     
     //atributos do sistema
     private $versao;
@@ -76,6 +77,7 @@ class sConfiguracao{
         $this->caracterEspecial = false;
         $this->letra = true;
         $this->numero = true;
+        $this->tempoCookie = 60*60;//segundos * minutos
         //sistema
         $this->versao = '2.8.2-beta';//2 módulos(perfil, suporte) - 8.0 (versão do BD) - beta (ambiente de execução)
         $this->empresa = 'Prefeitura de Itapoá';
@@ -184,6 +186,10 @@ class sConfiguracao{
 
     public function getCaracterEspecial() {
         return $this->caracterEspecial;
+    }
+
+    public function getTempoCookie() {
+        return $this->tempoCookie;
     }
 
     public function getVersao() {
@@ -312,6 +318,10 @@ class sConfiguracao{
 
     public function setCaracterEspecial($caracterEspecial): void {
         $this->caracterEspecial = $caracterEspecial;
+    }
+
+    public function setTempoCookie($tempoCookie): void {
+        $this->tempoCookie = $tempoCookie;
     }
 
     public function setVersao($versao): void {
