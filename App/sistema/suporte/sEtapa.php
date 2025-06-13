@@ -24,6 +24,7 @@ class sEtapa {
         if ($pagina == 'tMenu2_1.php' ||
             $pagina == 'tMenu2_2.php' ||
             $pagina == 'tMenu2_2_1.php' ||
+            $pagina == 'tMenu2_2_1_2.php-f2' ||
             $pagina == 'tMenu2_2_1_3.php' ||
             $pagina == 'tMenu2_2_1_3_1.php' ||
             $pagina == 'tMenu2_2_1_3_2.php' ||
@@ -137,6 +138,7 @@ class sEtapa {
         $this->setMConexao(new mConexao());
 
         if ($pagina == 'tMenu2_2_3.php' ||
+            $pagina == 'tMenu2_2_1_2.php-f2' ||
             $pagina == 'tMenu2_2_1_3.php' ||
             $pagina == 'tMenu2_2_1_3_1.php' ||
             $pagina == 'tMenu2_2_1_3_2.php') {
@@ -206,7 +208,4 @@ class sEtapa {
     public function setSNotificacao(sNotificacao $sNotificacao): void {
         $this->sNotificacao = $sNotificacao;
     }
-
-
-
 }

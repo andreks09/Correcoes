@@ -277,6 +277,7 @@ HTML;
                                 $menu == '2_1_2' ||
                                 $menu == '2_2' ||
                                 $menu == '2_2_1' ||
+                                $menu == '2_2_1_2' ||
                                 $menu == '2_2_1_3' ||
                                 $menu == '2_2_1_3_1' ||
                                 $menu == '2_2_1_3_2' ||
@@ -323,6 +324,7 @@ HTML;
                                 //abre os menus da condição
                                 $menu == '2_2' ||
                                 $menu == '2_2_1' ||
+                                $menu == '2_2_1_2' ||
                                 $menu == '2_2_1_3' ||
                                 $menu == '2_2_1_3_1' ||
                                 $menu == '2_2_1_3_2' ||
@@ -759,6 +761,9 @@ HTML;
                             break;
                         case "2_2_1":
                             require_once '../suporte/tMenu2_2_1.php';
+                            break;
+                        case "2_2_1_2":
+                            require_once '../suporte/tMenu2_2_1_2.php';
                             break;
                         case "2_2_1_3":
                             require_once '../suporte/tMenu2_2_1_3.php';

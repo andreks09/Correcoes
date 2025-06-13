@@ -143,8 +143,12 @@ class sNotificacao{
                 break;
             case '33':
                 //não localizou a chave no bd
-                $this->setMensagem('Esse equipamento não pode ter seus atributos alterados devido ao [RF014] O sistema deve conter um registro de equipamento indefinido e o mesmo não poderá ter seus atributos alterados.');
-                break;          
+                $this->setMensagem('Esse equipamento não pode ter seus atributos alterados devido ao [RF014]. O sistema deve conter um registro de equipamento indefinido e o mesmo não poderá ter seus atributos alterados.');
+                break;  
+            case '34':
+                //Permissão nível 1 só pode alterar quando estiver na etapa 1, demais níveis podem alterar somente enqanto o ticket não for encerrado.
+                $this->setMensagem('Você não possui nível de permissão para realizar está ação, contate o administrador e informe o código ('.$this->getCodigo().').');
+                break;  
             default:
                 $this->setTipo('danger');
                 $this->setTitulo('Erro!');

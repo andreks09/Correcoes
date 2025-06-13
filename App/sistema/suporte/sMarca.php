@@ -22,6 +22,7 @@ class sMarca {
             $pagina == 'tMenu2_1.php' ||
             $pagina == 'tMenu2_2.php' ||
             $pagina == 'tMenu2_2_1.php' ||
+            $pagina == 'tMenu2_2_1_2.php' ||
             $pagina == 'tMenu3_2.php') {
             //monta os dados há serem passados na query               
             $dados = [
@@ -116,6 +117,4 @@ class sMarca {
     public function setSNotificacao(sNotificacao $sNotificacao): void {
         $this->sNotificacao = $sNotificacao;
     }
-
-
 }

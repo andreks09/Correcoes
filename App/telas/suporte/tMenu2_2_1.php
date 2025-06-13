@@ -373,7 +373,7 @@ if ($sProtocolo->getValidador()) {
         $sEtapa = new sEtapa();
         $sEtapa->setNomeCampo('protocolo_idprotocolo');
         $sEtapa->setValorCampo($idProtocolo);
-        $sEtapa->consultar('tMenu2_2_1.php');
+        $sEtapa->consultar('tMenu2_2_1.php');        
 
         $i = 0;
         foreach ($sEtapa->mConexao->getRetorno() as $key => $value) {
@@ -384,6 +384,7 @@ if ($sProtocolo->getValidador()) {
 
             $etapaReversa[$i] = $value;
             $i++;
+            $quantidadeEtapa = $i;
         }
 
         //tratamento da data de abertura
@@ -643,17 +644,19 @@ echo <<<HTML
                     </ul>
                 </div>
                 <div class="card-footer"> 
-                    <form action="{$sConfiguracao->getDiretorioVisualizacaoAcesso()}tPainel.php?menu=2_1" name="f2" id="f2" method="post">
+                    <form action="{$sConfiguracao->getDiretorioVisualizacaoAcesso()}tPainel.php?menu=2_2_1_2" name="f2" id="f2" method="post">
                         <input type="hidden" name="menu" value="2_2_1" form="f2">
                         <input type="hidden" name="idProtocolo" value="{$idProtocolo}" form="f2">
+                        <input type="hidden" name="idEquipamentoAnterior" value="{$idEquipamento}" form="f2">
+                        <input type="hidden" name="patrimonioAnterior" value="{$patrimonio}" form="f2">
 HTML;
-if ($_SESSION['credencial']['nivelPermissao'] > 1) {
-    echo <<<HTML
-                            <button type="submit" class="btn btn-primary float-left" form="f2">Alterar</button>
+                if ($_SESSION['credencial']['nivelPermissao'] > 1 ||
+                    ($_SESSION['credencial']['nivelPermissao'] < 2 && $quantidadeEtapa == 1)) {
+                echo <<<HTML
+                        <button type="submit" class="btn btn-primary float-left" form="f2">Alterar</button>
 HTML;
-}
-echo <<<HTML
-                        
+                }
+                echo <<<HTML
                     </form>
                 </div>  
                 <!-- /.card-body -->
