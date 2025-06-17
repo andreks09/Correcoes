@@ -23,7 +23,7 @@
                     </p>
                 </div>
                 <div class="col-md-12 col-lg-6 col-xl-6">
-                    <iframe class="embed-responsive-item" src="https://youtu.be/qPev0Wk2b-s" allowfullscreen="" width="640" height="360"></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/qPev0Wk2b-s?si=1Qq7ptdJuHXBheXk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>                
             </div>            
         </div>
