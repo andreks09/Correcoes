@@ -41,7 +41,10 @@ class sSecretaria {
             $pagina == 'tMenu1_2_1.php' ||
             $pagina == 'tMenu2_1.php' ||
             $pagina == 'tMenu4_2_1_1.php' ||
-            $pagina == 'tMenu2_2_1.php'){
+            $pagina == 'tMenu2_2_1.php' ||
+            $pagina == 'tMenu7_2.php' ||
+            $pagina == 'tMenu7_3.php' ||
+            $pagina == 'tMenu7_4.php'){
             $dados = [
                 'comando' => 'SELECT',
                 'busca' => '*',
@@ -67,7 +70,8 @@ class sSecretaria {
             $pagina == 'tMenu4_2_1.php' ||
             $pagina == 'tMenu4_2_2.php' ||
             $pagina == 'tMenu4_2_3.php' ||
-            $pagina == 'tMenu4_2_4.php'){
+            $pagina == 'tMenu4_2_4.php' ||
+            $pagina == 'tMenu7_1.php'){
             $dados = [
                 'comando' => 'SELECT',
                 'busca' => '*',

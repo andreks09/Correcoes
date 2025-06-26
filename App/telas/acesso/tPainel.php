@@ -699,9 +699,98 @@ HTML;
                                     </li>
                                 </ul>
                                 <!--FINAL SUBMENU 6_3-->
-                                <!--FINAL MENU-->
+                                <!--MENU7-->                                
 HTML;
                                 }
+                                //abre os menus da condição                                
+                                $menu == '7_1' ||
+                                $menu == '7_2' ||
+                                $menu == '7_3' ||
+                                $menu == '7_4' ?
+                                $atributo = ' menu-is-opening menu-open' :
+                                $atributo = '';
+                                
+                                echo <<<HTML
+                                <li class="nav-item $atributo">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-address-book"></i>
+                                    <p>
+                                        Contatos
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <!--FINAL CABEÇALHO MENU 7-->
+                                        
+                                <!--SUBMENU 7_1-->
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+HTML;
+                                //abre os menus da condição
+                                $menu == '7_1' ?
+                                $atributo = ' active' :
+                                $atributo = '';
+                                
+                                echo <<<HTML
+                                        <a href="tPainel.php?menu=7_1" class="nav-link $atributo">
+                                            <i class="nav-icon fas fa-circle"></i>
+                                            <p>Secretarias</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!--FINAL SUBMENU 7_1-->
+                                <!--SUBMENU 7_2-->
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+HTML;
+                                //abre os menus da condição
+                                $menu == '7_2' ?
+                                $atributo = ' active' :
+                                $atributo = '';
+                                
+                                echo <<<HTML
+                                        <a href="tPainel.php?menu=7_2" class="nav-link $atributo">
+                                            <i class="nav-icon fas fa-circle"></i>
+                                            <p>Departamentos</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!--FINAL SUBMENU 7_2-->
+                                <!--SUBMENU 7_3-->
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+HTML;                                       
+                                
+                                //abre os menus da condição
+                                $menu == '7_3' ?
+                                $atributo = ' active' :
+                                $atributo = '';
+                                
+                                echo <<<HTML
+                                        <a href="tPainel.php?menu=7_3" class="nav-link $atributo">
+                                            <i class="nav-icon fas fa-circle"></i>
+                                            <p>Coordenações</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!--FINAL SUBMENU 7_3-->
+                                <!--SUBMENU 7_4-->
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+HTML;                                       
+                                
+                                //abre os menus da condição
+                                $menu == '7_4' ?
+                                $atributo = ' active' :
+                                $atributo = '';
+                                
+                                echo <<<HTML
+                                        <a href="tPainel.php?menu=7_4" class="nav-link $atributo">
+                                            <i class="nav-icon fas fa-circle"></i>
+                                            <p>Setores</p>
+                                        </a>
+                                    </li>
+                                </ul>
+HTML;
                             ?>            
                             </li>
                         </ul>
@@ -849,6 +938,18 @@ HTML;
                             break;
                         case "6_3":
                             require_once '../suporte/tMenu6_3.php';
+                            break;
+                        case "7_1":
+                            require_once './tMenu7_1.php';
+                            break;
+                        case "7_2":
+                            require_once './tMenu7_2.php';
+                            break;
+                        case "7_3":
+                            require_once './tMenu7_3.php';
+                            break;
+                        case "7_4":
+                            require_once './tMenu7_4.php';
                             break;
                         //padrão
                         default:

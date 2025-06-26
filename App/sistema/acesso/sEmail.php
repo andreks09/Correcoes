@@ -204,7 +204,11 @@ class sEmail {
             $pagina == 'tMenu4_2_1_1.php-2' ||
             $pagina == 'tMenu4_2_2_1.php-2' ||
             $pagina == 'tMenu4_2_3_1.php-2' ||
-            $pagina == 'tMenu4_2_4_1.php-2') {
+            $pagina == 'tMenu4_2_4_1.php-2' ||
+            $pagina == 'tMenu7_1.php' ||
+            $pagina == 'tMenu7_2.php' ||
+            $pagina == 'tMenu7_3.php' ||
+            $pagina == 'tMenu7_4.php') {
             $dados = [
                 'comando' => 'SELECT',
                 'busca' => '*',
@@ -222,7 +226,8 @@ class sEmail {
         if ($pagina == 'tAcessar.php-secretaria' ||
             $pagina == 'tMenu1_2.php-secretaria' ||
             $pagina == 'tMenu2_2_1.php' ||
-            $pagina == 'tMenu4_2_1_1.php') {
+            $pagina == 'tMenu4_2_1_1.php' ||
+            $pagina == 'tMenu7_1.php-secretaria') {
             $dados = [
                 'comando' => 'SELECT',
                 'busca' => '*',
@@ -240,7 +245,8 @@ class sEmail {
         if ($pagina == 'tAcessar.php-departamento' ||
             $pagina == 'tMenu1_2.php-departamento' ||
             $pagina == 'tMenu2_2_1.php-departamento' ||
-            $pagina == 'tMenu4_2_2_1.php') {
+            $pagina == 'tMenu4_2_2_1.php' ||
+            $pagina == 'tMenu7_2.php-departamento') {
             $dados = [
                 'comando' => 'SELECT',
                 'busca' => '*',
@@ -256,8 +262,9 @@ class sEmail {
         }
         
         if ($pagina == 'tAcessar.php-coordenacao' ||
-            $pagina == 'tMenu1_2.php-coordenacao' ||
-            $pagina == 'tMenu4_2_3_1.php') {
+            $pagina == 'tMenu1_2.php-coordenacao' ||            
+            $pagina == 'tMenu4_2_3_1.php' ||
+            $pagina == 'tMenu7_3.php-coordenacao') {
             $dados = [
                 'comando' => 'SELECT',
                 'busca' => '*',
@@ -274,7 +281,8 @@ class sEmail {
         
         if ($pagina == 'tAcessar.php-setor' ||
             $pagina == 'tMenu1_2.php-setor' ||
-            $pagina == 'tMenu4_2_4_1.php') {
+            $pagina == 'tMenu4_2_4_1.php' ||
+            $pagina == 'tMenu7_4.php-setor') {
             $dados = [
                 'comando' => 'SELECT',
                 'busca' => '*',
