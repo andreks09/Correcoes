@@ -10,7 +10,11 @@ use App\sistema\acesso\{
     sTratamentoDados,
     sDepartamento,
     sEmail,
-    sTelefone
+    sTelefone,
+};
+
+use App\sistema\suporte\{
+    sProtocolo
 };
 
 //verifica se tem credencial para acessar o sistema
@@ -336,7 +340,25 @@ if (isset($_POST['pagina'])) {
         header("Location: {$sConfiguracao->getDiretorioVisualizacaoAcesso()}tPainel.php?menu=4_2_2_1&pagina=tMenu4_2_2.php&seguranca={$idDepartamentoCriptografada}&formulario=f1&campo=telefone&codigo=S1");
     }
     
-    if($alteracao){
+    if( $alteracao){
+        $sProtocolo = new sProtocolo();
+        $sProtocolo->setNomeCampo('dataHoraEncerramento');
+        $sProtocolo->setValorCampo('null');
+        $sProtocolo->consultar($pagina);
+        
+        //protocolos que ainda não foram encerrados
+        if($sProtocolo->getValidador()){
+            foreach ($sProtocolo->mConexao->getRetorno() as $valueProtocolo) {
+                $idProtocolo = $valueProtocolo['idprotocolo'];
+                
+                $sProtocolo->setIdProtocolo($idProtocolo);
+                $sProtocolo->setNomeCampo('');
+                $sProtocolo->setNomeCampo('departamento');
+                $sProtocolo->setValorCampo($departamento);
+                $sProtocolo->alterar($pagina);
+            }           
+        }
+        
         //retorne com as alterações realizadas
         $sConfiguracao = new sConfiguracao();
         header("Location: {$sConfiguracao->getDiretorioVisualizacaoAcesso()}tPainel.php?menu=4_2_2_1&pagina=tMenu4_2_2.php&seguranca={$idDepartamentoCriptografada}&formulario=f1&campo=todos&codigo=S1");

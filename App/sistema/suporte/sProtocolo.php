@@ -22,7 +22,11 @@ class sProtocolo {
         $this->setMConexao(new mConexao());
         
         if ($pagina == 'tMenu2_2.php' ||
-            $pagina == 'tMenu6_1.php') {
+            $pagina == 'tMenu6_1.php' ||
+            $pagina == 'tMenu4_2_1_1.php' ||
+            $pagina == 'tMenu4_2_2_1.php' ||
+            $pagina == 'tMenu4_2_3_1.php' ||
+            $pagina == 'tMenu4_2_4_1.php') {
             //monta os dados há serem passados na query               
             $dados = [
                 'comando' => 'SELECT',
@@ -62,13 +66,12 @@ class sProtocolo {
                 'ordem' => null//caso não tenha, colocar como null
             ];
         }
-                
+                       
         //envia os dados para elaboração da query
         $this->mConexao->CRUD($dados);
 
         //atualiza o validador da classe de acordo com o validador da conexão
         $this->setValidador($this->mConexao->getValidador());
-        
     }
     
     public function inserir($pagina, $dadosTratados) {
@@ -118,7 +121,11 @@ class sProtocolo {
         //cria conexão para inserir os dados no BD
         $this->setMConexao(new mConexao());
 
-        if ($pagina == 'tMenu2_2_1_3_2.php') {
+        if ($pagina == 'tMenu2_2_1_3_2.php' ||
+            $pagina == 'tMenu4_2_1_1.php' ||
+            $pagina == 'tMenu4_2_2_1.php' ||
+            $pagina == 'tMenu4_2_3_1.php' ||
+            $pagina == 'tMenu4_2_4_1.php') {
             
             $dados = [
                 'comando' => 'UPDATE',

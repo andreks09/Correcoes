@@ -10,7 +10,11 @@ use App\sistema\acesso\{
     sTratamentoDados,
     sSecretaria,
     sEmail,
-    sTelefone
+    sTelefone,
+};
+
+use App\sistema\suporte\{
+    sProtocolo
 };
 
 //verifica se tem credencial para acessar o sistema
@@ -133,7 +137,6 @@ if (isset($_POST['pagina'])) {
             alimentaHistorico($pagina, $acao, 'whatsApp', '', $whatsApp, $idUsuario);
         }
     }
-    
     
     //se não for preenchido o campo secretaria, retorne com mensagem de erro
     if(!$secretaria){
@@ -337,6 +340,24 @@ if (isset($_POST['pagina'])) {
     }
     
     if($alteracao){
+        $sProtocolo = new sProtocolo();
+        $sProtocolo->setNomeCampo('dataHoraEncerramento');
+        $sProtocolo->setValorCampo('null');
+        $sProtocolo->consultar($pagina);
+        
+        //protocolos que ainda não foram encerrados
+        if($sProtocolo->getValidador()){
+            foreach ($sProtocolo->mConexao->getRetorno() as $valueProtocolo) {
+                $idProtocolo = $valueProtocolo['idprotocolo'];
+                
+                $sProtocolo->setIdProtocolo($idProtocolo);
+                $sProtocolo->setNomeCampo('');
+                $sProtocolo->setNomeCampo('secretaria');
+                $sProtocolo->setValorCampo($secretaria);
+                $sProtocolo->alterar($pagina);
+            }           
+        }
+        
         //retorne com as alterações realizadas
         $sConfiguracao = new sConfiguracao();
         header("Location: {$sConfiguracao->getDiretorioVisualizacaoAcesso()}tPainel.php?menu=4_2_1_1&pagina=tMenu4_2_1.php&seguranca={$idSecretariaCriptografada}&formulario=f1&campo=todos&codigo=S1");

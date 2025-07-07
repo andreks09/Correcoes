@@ -13,6 +13,10 @@ use App\sistema\acesso\{
     sTelefone
 };
 
+use App\sistema\suporte\{
+    sProtocolo
+};
+
 //verifica se tem credencial para acessar o sistema
 if (!isset($_SESSION['credencial'])) {
     //solicitar saída com tentativa de violação
@@ -337,6 +341,24 @@ if (isset($_POST['pagina'])) {
     }
     
     if($alteracao){
+        $sProtocolo = new sProtocolo();
+        $sProtocolo->setNomeCampo('dataHoraEncerramento');
+        $sProtocolo->setValorCampo('null');
+        $sProtocolo->consultar($pagina);
+        
+        //protocolos que ainda não foram encerrados
+        if($sProtocolo->getValidador()){
+            foreach ($sProtocolo->mConexao->getRetorno() as $valueProtocolo) {
+                $idProtocolo = $valueProtocolo['idprotocolo'];
+                
+                $sProtocolo->setIdProtocolo($idProtocolo);
+                $sProtocolo->setNomeCampo('');
+                $sProtocolo->setNomeCampo('coordenacao');
+                $sProtocolo->setValorCampo($coordenacao);
+                $sProtocolo->alterar($pagina);
+            }           
+        }
+        
         //retorne com as alterações realizadas
         $sConfiguracao = new sConfiguracao();
         header("Location: {$sConfiguracao->getDiretorioVisualizacaoAcesso()}tPainel.php?menu=4_2_3_1&pagina=tMenu4_2_3.php&seguranca={$idCoordenacaoCriptografada}&formulario=f1&campo=todos&codigo=S1");

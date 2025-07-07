@@ -7,6 +7,28 @@
     </div>
     <div class="card-body">
         <div class="callout callout-info">
+            <h5>Correção - Erro ao alterar nomenclaturas (secretaria, departamento, coordenação e setor) de tickets em aberto</h5>
+            <p>
+                Versão: 2.8.2-beta (pós teste);<br />
+                Locais: tMenu4_2_1_1, tMenu4_2_2_1, tMenu4_2_3_1, tMenu4_2_4_1;<br />
+                Campos: secretaria, departamento, coordenacao e setor;<br />
+                Data: 07/07/2025;<br />                
+                Reclamação: Erro ao consultar um protocolo<br />  
+                Solução: Correção da lógica do controladores sProtocolo, sSecretaria, sDepartamento, sCoordenacao e sSetor<br />   
+            </p>
+        </div>
+        <div class="callout callout-info">
+            <h5>Implementação - Menu com os contatos das repartições</h5>
+            <p>
+                Versão: 2.8.2-beta (pós teste);<br />
+                Locais: tPainel;<br />
+                Campos: --;<br />
+                Data: 26/06/2025;<br />                
+                Reclamação: Poderia ter um lugar para vermos os contatos da Prefeitura<br />  
+                Solução: Implementado Menu "Contatos" e Submenus "Secretarias", "Departamentos", "Coordenações" e "Setores"<br />   
+            </p>
+        </div>
+        <div class="callout callout-info">
             <div class="row">
                 <div class="col-md-12 col-lg-6 col-xl-6">
                     <h5>Implementação - Botão para alterar o equipamento de um ticket já aberto.</h5>
