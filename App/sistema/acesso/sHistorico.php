@@ -49,7 +49,11 @@ class sHistorico {
             
             //insere os dados do histórico no BD     
             //obtèm dados do endereço de ip
-            $tratarDados['ip'] = str_replace(['-'], '.', gethostbyaddr($_SERVER['REMOTE_ADDR']));
+            $tratarDados['ip'] = $_SERVER['REMOTE_ADDR'];
+
+            if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+                $tratarDados['ip'] = $_SERVER['HTTP_X_FORWARDED_FOR'];
+            }
             //obtém dados do navegador
             $sTratarNavegador = new sTratamentoDados($_SERVER['HTTP_USER_AGENT']);            
             $tratarDados['navegador'] = $sTratarNavegador->tratarNavegador();
