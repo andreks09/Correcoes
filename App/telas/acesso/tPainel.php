@@ -277,6 +277,7 @@ HTML;
                                 $menu == '2_1_2' ||
                                 $menu == '2_2' ||
                                 $menu == '2_2_1' ||
+                                $menu == '2_2_1_1' ||
                                 $menu == '2_2_1_2' ||
                                 $menu == '2_2_1_3' ||
                                 $menu == '2_2_1_3_1' ||
@@ -324,6 +325,7 @@ HTML;
                                 //abre os menus da condição
                                 $menu == '2_2' ||
                                 $menu == '2_2_1' ||
+                                $menu == '2_2_1_1' ||
                                 $menu == '2_2_1_2' ||
                                 $menu == '2_2_1_3' ||
                                 $menu == '2_2_1_3_1' ||
@@ -851,6 +853,9 @@ HTML;
                         case "2_2_1":
                             require_once '../suporte/tMenu2_2_1.php';
                             break;
+                        case "2_2_1_1":
+                            require_once '../suporte/tMenu2_2_1_1.php';
+                            break;
                         case "2_2_1_2":
                             require_once '../suporte/tMenu2_2_1_2.php';
                             break;
@@ -1023,6 +1028,23 @@ HTML;
         $(function(){
            $('[data-mask]').inputmask();
         });
-        </script>        
+        </script>  
+        <script>
+            $(document).ready(function () {
+                $("#tabela1").DataTable({
+                    language: {url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/pt-BR.json"},
+                    "responsive": true,
+                    "lengthChange": false,
+                    "autoWidth": false,
+                    buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
+                    initComplete: function () {
+                        this.api()
+                        .buttons()
+                        .container()
+                        .appendTo(" #tabela1_wrapper .col-md-6:eq(0)");
+                    }
+                });
+            });
+        </script>
     </body>
 </html>

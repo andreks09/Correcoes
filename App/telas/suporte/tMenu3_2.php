@@ -24,7 +24,7 @@ $sEquipamento->consultar('tMenu3_2.php');
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-        <table id="tabelaMenu3_2" class="table table-bordered table-striped">
+        <table id="tabela1" class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>ID</th>

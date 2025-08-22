@@ -619,7 +619,7 @@ class sUsuario {
         //verifica se tem letras e espaço
         $caracterValido = !!preg_match('|^[\pL\s]+$|u', $nome);
         if (mb_strlen($nome) < 2 ||
-                mb_strlen($nome) > 20) {            
+                mb_strlen($nome) > 100) {            
             $this->setValidador(false);
             $this->setSNotificacao(new sNotificacao('A24'));
         } else if (!$caracterValido) {

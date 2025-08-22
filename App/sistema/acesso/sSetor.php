@@ -27,7 +27,8 @@ class sSetor {
             $pagina == 'tMenu1_3.php' ||
             $pagina == 'tMenu2_1.php' ||
             $pagina == 'tMenu2_2_1.php' ||
-            $pagina == 'tMenu4_2_4_1.php'){
+            $pagina == 'tMenu4_2_4_1.php' ||
+            $pagina == 'tMenu2_2_1_1.php'){
             $dados = [
                 'comando' => 'SELECT',
                 'busca' => '*',
@@ -64,7 +65,8 @@ class sSetor {
             $pagina == 'tMenu2_1.php-f1' ||
             $pagina == 'tMenu2_2_2.php' ||
             $pagina == 'tMenu4_2_4.php' ||
-            $pagina == 'tMenu7_4.php') {
+            $pagina == 'tMenu7_4.php' ||
+            $pagina == 'tMenu2_2_1_1.php-f1') {
             $dados = [
                 'comando' => 'SELECT',
                 'busca' => '*',

@@ -41,7 +41,8 @@ class sProtocolo {
         
         if ($pagina == 'tMenu2_2_1.php' ||
             $pagina == 'tMenu2_2_2.php' ||
-            $pagina == 'tMenu2_2_3.php') {
+            $pagina == 'tMenu2_2_3.php' ||
+            $pagina == 'tMenu2_2_1_1.php') {
             //monta os dados há serem passados na query               
             $dados = [
                 'comando' => 'SELECT',
@@ -125,7 +126,8 @@ class sProtocolo {
             $pagina == 'tMenu4_2_1_1.php' ||
             $pagina == 'tMenu4_2_2_1.php' ||
             $pagina == 'tMenu4_2_3_1.php' ||
-            $pagina == 'tMenu4_2_4_1.php') {
+            $pagina == 'tMenu4_2_4_1.php' ||
+            $pagina == 'tMenu2_2_1_1.php') {
             
             $dados = [
                 'comando' => 'UPDATE',

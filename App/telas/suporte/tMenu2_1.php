@@ -118,7 +118,7 @@ HTML;
                         }
                     ?>
                     <div class="ocultarTabelaMenu2_1" id="ocultarTabelaMenu2_1" name="ocultarTabelaMenu2_1">
-                        <table class="table table-bordered table-striped" name="tabelaMenu2_1" id="tabelaMenu2_1">
+                        <table class="table table-bordered table-striped" name="tabela1" id="tabela1">
                             <thead>
                                 <tr>
                                     <th>Identificação</th>
@@ -269,17 +269,4 @@ HTML;
             document.getElementById('conteudo').innerHTML = 'Não';
         }
     }
-</script>
-<script>
-    $(function () {
-        $("#tabelaMenu2_1").DataTable({
-            language:{
-                url: "https://itapoa.app.br/vendor/dataTable_pt_br/dataTable_pt_br.json"
-            },
-            "responsive": true, 
-            "lengthChange": false, 
-            "autoWidth": false,
-            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-        }).buttons().container().appendTo('#tabelaMenu2_1_wrapper .col-md-6:eq(0)');        
-    });
 </script>

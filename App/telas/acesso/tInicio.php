@@ -6,7 +6,50 @@
         </h3>
     </div>
     <div class="card-body">
+        <div class="callout callout-warning">
+            <h5>Correção - Tabelas não atendem à responsividade</h5>
+            <p>
+                Versão: 2.8.2-beta (pós teste);<br />
+                Locais: tPainel, tMenu1_2, tMenu1_3, tMenu2_1, tMenu2_2, tMenu6_1, tMenu7_1, tMenu7_2, tMenu7_3, tMenu7_4;<br />
+                Campos: tabela1;<br />
+                Data: 22/08/2025;<br />                
+                Reclamação: Tabelas desconfiguradas<br />  
+                Solução: Corrigido url da DataTable<br />   
+            </p>
+        </div>
         <div class="callout callout-info">
+            <div class="row">
+                <div class="col-md-12 col-lg-6 col-xl-6">
+                    <h5>Implementação - Botão para alterar o requerente de um ticket já aberto.</h5>
+                    <p>
+                        Versão: 2.8.2-beta (pós teste);<br />
+                        Locais: 2_2_1;<br />
+                        Campos: Botão Alterar;<br />
+                        Data: 22/08/2025;<br />                
+                        Reclamação: Se eu abrir o chamado no meu nome e for para outra pessoa, tenho que encerrar o ticket e abrir um novo.<br />  
+                        Solução: Implementado na tela de visualização do ticket, no quadro dos dados do Solicitante/ Requerente, um botão que permite ao usuário
+                        de permissão nível 1 alterar o requerente enquanto estiver na etapa 1. Para usuários de níveis de permissão mais elevados, o botão estará 
+                        disponível até o encerramento do ticket.<br />   
+
+                    </p>
+                </div>
+                <div class="col-md-12 col-lg-6 col-xl-6">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/qPev0Wk2b-s?si=1Qq7ptdJuHXBheXk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>                
+            </div>            
+        </div>
+        <div class="callout callout-danger">
+            <h5>Correção - Limitação de caracteres (20) no campo nome</h5>
+            <p>
+                Versão: 2.8.2-beta (pós teste);<br />
+                Locais: tMenu1_3_1;<br />
+                Campos: Aprovar situação;<br />
+                Data: 08/07/2025;<br />                
+                Reclamação: Ele preenhe automático, eu só complemento com o restante do nome<br />  
+                Solução: Correção da lógica do método verificarNome() da classe sUsuario<br />   
+            </p>
+        </div>
+        <div class="callout callout-danger">
             <h5>Correção - Erro ao alterar nomenclaturas (secretaria, departamento, coordenação e setor) de tickets em aberto</h5>
             <p>
                 Versão: 2.8.2-beta (pós teste);<br />
@@ -14,7 +57,7 @@
                 Campos: secretaria, departamento, coordenacao e setor;<br />
                 Data: 07/07/2025;<br />                
                 Reclamação: Erro ao consultar um protocolo<br />  
-                Solução: Correção da lógica do controladores sProtocolo, sSecretaria, sDepartamento, sCoordenacao e sSetor<br />   
+                Solução: Correção da lógica dos controladores sProtocolo, sSecretaria, sDepartamento, sCoordenacao e sSetor<br />   
             </p>
         </div>
         <div class="callout callout-info">
@@ -39,7 +82,7 @@
                         Data: 13/06/2025;<br />                
                         Reclamação: Se marcar equipamento como indefinido por equívoco e ele já estiver registrado no sistema, o pessoal do Departamento pede para encerrar o ticket e abrir um novo informando o patrimônio.<br />  
                         Solução: Implementado na tela de visualização do ticket, no quadro das especificações do equipamento, um botão que permite ao usuário
-                        de permissão nível 1 alterar o equipamento enquanto estiver na etapa 1. Para usuário de níveis de permissão mais elevados, o botão estará 
+                        de permissão nível 1 alterar o equipamento enquanto estiver na etapa 1. Para usuários de níveis de permissão mais elevados, o botão estará 
                         disponível até o encerramento do ticket.<br />   
 
                     </p>
@@ -60,7 +103,7 @@
                 Solução: Alterado tempo do Garbage Collector e parâmetros dos Cookies<br />   
             </p>
         </div>
-        <div class="callout callout-warning">
+        <div class="callout callout-danger">
             <h5>Correção - Senha e telefone</h5>
             <p>
                 Versão: 2.8.2-beta (pós teste);<br />

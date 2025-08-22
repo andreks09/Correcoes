@@ -22,7 +22,7 @@ $sUsuario->consultar('tMenu1_2.php');
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-        <table id="tabelaMenu1_2" class="table table-bordered table-striped">
+        <table id="tabela1" class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>Usuário</th>
@@ -470,16 +470,3 @@ HTML;
     </div>
     <!-- /.card-body -->
 </div>
-<script>
-$(function () {
-    $("#tabelaMenu1_2").DataTable({
-        language:{
-            url: "https://itapoa.app.br/vendor/dataTable_pt_br/dataTable_pt_br.json"
-        },
-        "responsive": true, 
-        "lengthChange": false, 
-        "autoWidth": false,
-        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#tabelaMenu1_2_wrapper .col-md-6:eq(0)');        
-});
-</script>

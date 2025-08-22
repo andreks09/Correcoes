@@ -92,7 +92,7 @@ HTML;
         }       
         ?>
         
-        <table name="tabelaMenu2_2" id="tabelaMenu2_2" class="table table-bordered table-striped">
+        <table name="tabela1" id="tabela1" class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>Protocolo n.º</th>
@@ -652,18 +652,4 @@ HTML;
             document.getElementById('conteudo').innerHTML = 'Não';
         }
     }
-</script>
-<script>
-    $(function () {
-        $("#tabelaMenu2_2").DataTable({
-            language:{
-                url: "https://itapoa.app.br/vendor/dataTable_pt_br/dataTable_pt_br.json"
-            },
-            "responsive": true, 
-            "lengthChange": false, 
-            "autoWidth": false,
-            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
-            "aaSorting": [10, "desc"]
-        }).buttons().container().appendTo('#tabelaMenu2_2_wrapper .col-md-6:eq(0)');        
-    });
 </script>

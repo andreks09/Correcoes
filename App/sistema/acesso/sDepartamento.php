@@ -29,7 +29,8 @@ class sDepartamento {
         //cria conexão para as opções das páginas abaixo
         $this->setMConexao(new mConexao());
         if ($pagina == 'tAcessar.php' ||
-            $pagina == 'tMenu4_2_2_1.php') {
+            $pagina == 'tMenu4_2_2_1.php' ||
+            $pagina == 'tMenu2_2_1_1.php') {
             $dados = [
                 'comando' => 'SELECT',
                 'busca' => '*',
@@ -83,7 +84,8 @@ class sDepartamento {
         }
         
         if ($pagina == 'tMenu1_2_1.php' ||
-            $pagina == 'tMenu4_2_2.php') {
+            $pagina == 'tMenu4_2_2.php' ||
+            $pagina == 'tMenu2_2_1_1.php-f1') {
             //consulta para busca sem o id da secretaria
             $dados = [
                 'comando' => 'SELECT',

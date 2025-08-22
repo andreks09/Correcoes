@@ -597,6 +597,18 @@ echo <<<HTML
                     </ul>
                 </div>
                 <div class="card-footer">  
+                    <form action="{$sConfiguracao->getDiretorioVisualizacaoAcesso()}tPainel.php?menu=2_2_1_1" name="f1" id="f1" method="post">
+                        <input type="hidden" name="menu" value="2_2_1" form="f1">
+                        <input type="hidden" name="idProtocolo" value="{$idProtocolo}" form="f1">
+HTML;
+                if ($_SESSION['credencial']['nivelPermissao'] > 1 ||
+                    ($_SESSION['credencial']['nivelPermissao'] < 2 && $quantidadeEtapa == 1)) {
+                echo <<<HTML
+                        <button type="submit" class="btn btn-primary float-left" form="f1">Alterar</button>
+HTML;
+                }
+                echo <<<HTML
+                    </form>
                 </div>
                 
                 <!-- /.card-body -->

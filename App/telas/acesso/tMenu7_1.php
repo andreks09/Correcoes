@@ -18,7 +18,7 @@ $sSecretaria->consultar($pagina);
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-        <table id="tabelaMenu7_1" class="table table-bordered table-striped">
+        <table id="tabela1" class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>Secretaria</th>
@@ -106,14 +106,3 @@ HTML;
     </div>
     <!-- /.card-body -->
 </div>
-<script>
-    $(function () {
-        $("#tabelaMenu7_1").DataTable({            
-            "responsive": true, 
-            "lengthChange": false, 
-            "autoWidth": false,
-            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
-            "aaSorting": [0, "asc"]
-        }).buttons().container().appendTo('#tabelaMenu7_1_wrapper .col-md-6:eq(0)');        
-    });
-</script>

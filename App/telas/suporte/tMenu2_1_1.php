@@ -134,7 +134,6 @@ if (isset($_GET['campo'])) {
                                         <label>Secretaria</label>
                                         <select class="form-control<?php echo isset($alertaSecretaria) ? $alertaSecretaria : ''; ?>" name="secretaria" id="secretaria" disabled="" form="f2">
                                             <?php
-                                            echo '<option value="0" selected="">--</option>';
                                             foreach ($sSecretaria->mConexao->getRetorno() as $value) {                                            
                                                 echo '<option value="' . $value['idsecretaria'] . '"' . $atributo . ' >' . $value['nomenclatura'] . '</option>';
                                             }
@@ -389,7 +388,7 @@ echo "<script>
 
             //mostra somente os departamentos da secretaria escolhida
             $.ajax({
-                url: 'https://itapoa.app.br/App/sistema/acesso/ajaxDepartamento.php',
+                url: '../../../App/sistema/acesso/ajaxDepartamento.php',
                 type: 'POST',
                 data: {
                     'idSecretaria': idSecretaria
@@ -403,7 +402,7 @@ echo "<script>
             var idSecretaria = $(this).val();
             //mostra as coordenações do departamento escolhido
             $.ajax({
-                url: 'https://itapoa.app.br/App/sistema/acesso/ajaxCoordenacao.php',
+                url: '../../../App/sistema/acesso/ajaxCoordenacao.php',
                 type: 'POST',
                 data: {
                     'idSecretaria': idSecretaria
@@ -417,7 +416,7 @@ echo "<script>
             var idSecretaria = $(this).val();
             //mostra as coordenações do departamento escolhido
             $.ajax({
-                url: 'https://itapoa.app.br/App/sistema/acesso/ajaxSetor.php',
+                url: '../../../App/sistema/acesso/ajaxSetor.php',
                 type: 'POST',
                 data: {
                     'idSecretaria': idSecretaria

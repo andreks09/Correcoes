@@ -51,7 +51,7 @@ if ($_SESSION['credencial']['nivelPermissao'] < 2) {
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-        <table name="tabelaMenu6_1" id="tabelaMenu6_1" class="table table-bordered table-striped">
+        <table name="tabela1" id="tabela1" class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>Protocolo n.º</th>
