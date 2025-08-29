@@ -75,6 +75,20 @@ if (isset($_POST['formulario'])) {
     $sTratamentoEmail = new sTratamentoDados($email);
     if($sTratamentoEmail->tratarEmail()){
         $emailTratado = $email;
+        
+        $sProtocolo = new sProtocolo();
+        $sProtocolo->setNomeCampo('idprotocolo');
+        $sProtocolo->setValorCampo($idProtocolo);
+        $sProtocolo->consultar('tMenu2_2_1_1.php');
+        
+        foreach ($sProtocolo->getMConexao()->getRetorno() as $value) {
+            $emailDoRequerente = $value['emailDoRequerente'];
+        }
+        
+        if($email == $emailDoRequerente){
+            header("Location: {$sConfiguracao->getDiretorioVisualizacaoAcesso()}tPainel.php?menu=2_2_1_1&campo=email&codigo=A35&idProtocolo=$idProtocolo");
+            exit();
+        }
     }else{
         header("Location: {$sConfiguracao->getDiretorioVisualizacaoAcesso()}tPainel.php?menu=2_2_1_1&campo=email&codigo=A2&idProtocolo=$idProtocolo");
         exit();

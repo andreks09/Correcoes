@@ -6,6 +6,17 @@
         </h3>
     </div>
     <div class="card-body">
+        <div class="callout callout-danger">
+            <h5>Correção - Alterar requerente</h5>
+            <p>
+                Versão: 2.8.2-beta (pós teste);<br />
+                Locais: tMenu2_2_1_1, sAlterar2_2_1_1;<br />
+                Campos: e-mail;<br />
+                Data: 29/08/2025;<br />                
+                Reclamação: Erro ao tentar alterar os dados do requerente<br />  
+                Solução: Alterado a lógica de verificação dos dados anteriores com os dados atuais<br />   
+            </p>
+        </div>
         <div class="callout callout-warning">
             <h5>Correção - Tabelas não atendem à responsividade</h5>
             <p>

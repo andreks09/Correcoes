@@ -149,6 +149,10 @@ class sNotificacao{
                 //Permissão nível 1 só pode alterar quando estiver na etapa 1, demais níveis podem alterar somente enqanto o ticket não for encerrado.
                 $this->setMensagem('Você não possui nível de permissão para realizar está ação, contate o administrador e informe o código ('.$this->getCodigo().').');
                 break;  
+            case '35':
+                //Permissão nível 1 só pode alterar quando estiver na etapa 1, demais níveis podem alterar somente enqanto o ticket não for encerrado.
+                $this->setMensagem('O e-mail atual deve ser diferente do e-mail anterior');
+                break;  
             default:
                 $this->setTipo('danger');
                 $this->setTitulo('Erro!');

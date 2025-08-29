@@ -204,7 +204,8 @@ if(isset($_GET['seguranca'])){
                     </div>
                 </div>
                 <!-- /.card-body -->
-                <form action="#" method="post" enctype="multipart/form-data" name="f1" id="f1">
+                <input type="hidden" name="pagina" id="pagina" value='tMenu3_2_1.php' form="f1">
+                <form action="<?php echo $sConfiguracao->getDiretorioControleSuporte(); ?>sAlterarEquipamento.php" method="post" enctype="multipart/form-data" name="f1" id="f1">
                     <div class="card-footer">
                         <?php
                         if($idEquipamento != 6){

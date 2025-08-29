@@ -98,7 +98,7 @@ if (isset($_GET['campo'])) {
                                         <select class="form-control<?php echo isset($alertaSecretaria) ? $alertaSecretaria : ''; ?>" name="secretaria" id="secretaria" form="f2">
                                             <?php
                                             foreach ($sSecretaria->mConexao->getRetorno() as $valorSecreataria) {    
-                                                $secretaria == $valorSecreataria['nomenclatura'] ? $atributo = 'selected=\"\"' : $atributo = '';
+                                                $secretaria == $valorSecreataria['nomenclatura'] ? $atributo = 'selected=""' : $atributo = '';
                                                 echo '<option value="' . $valorSecreataria['idsecretaria'] . '"' . $atributo . ' >' . $valorSecreataria['nomenclatura'] . '</option>';
                                             }
                                             ?>
@@ -112,7 +112,7 @@ if (isset($_GET['campo'])) {
                                             <?php
                                             echo '<option value="0">--</option>';
                                             foreach ($sDepartamento->mConexao->getRetorno() as $valorDepartamento) {   
-                                                $departamento == $valorDepartamento['nomenclatura'] ? $atributo = 'selected=\"\"' : $atributo = '';
+                                                $departamento == $valorDepartamento['nomenclatura'] ? $atributo = 'selected=""' : $atributo = '';
                                                 echo '<option value="' . $valorDepartamento['iddepartamento'] . '"' . $atributo . ' >' . $valorDepartamento['nomenclatura'] . '</option>';
                                             }
                                             ?>
@@ -126,7 +126,7 @@ if (isset($_GET['campo'])) {
                                             <?php
                                             echo '<option value="0">--</option>';
                                             foreach ($sCoordenacao->mConexao->getRetorno() as $valorCoordenacao) {
-                                                $coordenacao == $valorCoordenacao['nomenclatura'] ? $atributo = 'selected=\"\"' : $atributo = '';
+                                                $coordenacao == $valorCoordenacao['nomenclatura'] ? $atributo = 'selected=""' : $atributo = '';
                                                 echo '<option value="' . $valorCoordenacao['idcoordenacao'] . '"' . $atributo . ' >' . $valorCoordenacao['nomenclatura'] . '</option>';
                                             }
                                             ?>
@@ -140,8 +140,8 @@ if (isset($_GET['campo'])) {
                                             <?php
                                             echo '<option value="0">--</option>';
                                             foreach ($sSetor->mConexao->getRetorno() as $valorSetor) {
-                                                $setor == $valorSetor['nomenclatura'] ? $atributo = 'selected=\"\"' : $atributo = '';
-                                                echo '<option valorSetor="' . $valorSetor['idsetor'] . '"' . $atributo . ' >' . $valorSetor['nomenclatura'] . '</option>';
+                                                $setor == $valorSetor['nomenclatura'] ? $atributo = 'selected=""' : $atributo = '';
+                                                echo '<option value="' . $valorSetor['idsetor'] . '"' . $atributo . ' >' . $valorSetor['nomenclatura'] . '</option>';
                                             }
                                             ?>
                                         </select>
