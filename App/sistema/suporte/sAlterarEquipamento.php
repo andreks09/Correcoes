@@ -7,14 +7,13 @@ use App\sistema\acesso\{
     sSair,
     sConfiguracao,
     sHistorico,
-    sTratamentoDados,
-    sDepartamento,
-    sEmail,
-    sTelefone,
+    sTratamentoDados
 };
 
 use App\sistema\suporte\{
-    sProtocolo
+    sProtocolo,
+    sEquipamento,
+    sModelo
 };
 
 //verifica se tem credencial para acessar o sistema
@@ -25,350 +24,155 @@ if (!isset($_SESSION['credencial'])) {
 }
 
 if (isset($_POST['pagina'])) {
-    $alteracao = false;
-    $idUsuario = $_SESSION['credencial']['idUsuario'];
-    $pagina = $_POST['pagina'];
-    $acao = $_POST['acao'];
-    $idDepartamento = $_POST['idDepartamento'];
-    $idDepartamentoCriptografada = base64_encode($idDepartamento);
-    isset($_POST['departamento']) ? $departamento = $_POST['departamento'] : $departamento = 0;
-    isset($_POST['endereco']) ? $endereco = $_POST['endereco'] : $endereco = 0;
-    isset($_POST['email']) ? $email = $_POST['email'] : $email = 0;
-    isset($_POST['telefone']) ? $telefone = $_POST['telefone'] : $telefone = 0;
-    isset($_POST['whatsApp']) ? $whatsApp = 1 : $whatsApp = 0;
+    $idUsuario          = $_SESSION['credencial']['idUsuario'];
+    $pagina             = $_POST['pagina'];
+    $acao               = $_POST['acao'];
+    $idEquipamento      = $_POST['idEquipamento'];
+    $categoria          = $_POST['categoria'];
+    $marca              = $_POST['marcaF1'];
+    $modelo             = $_POST['modeloF1'];
+    $etiqueta           = $_POST['etiqueta'];
+    $serie              = $_POST['serie'];
+    $tensao             = $_POST['tensao'];
+    $corrente           = $_POST['corrente'];
+    $sistemaOperacional = $_POST['sistemaOperacional'];
+    $ambiente           = $_POST['ambiente'];
     
-    //obter dados anteriores da departamento
-    $sDepartamento = new sDepartamento(0);
-    $sDepartamento->setNomeCampo('iddepartamento');
-    $sDepartamento->setValorCampo($idDepartamento);
-    $sDepartamento->consultar($pagina);
+    //obtém dados anteriores do equipamento
+    $sEquipamento = new sEquipamento(0);
+    $sEquipamento->setNomeCampo('idequipamento');
+    $sEquipamento->setValorCampo($idEquipamento);
+    $sEquipamento->consultar($pagina.'-2');
     
-    foreach ($sDepartamento->mConexao->getRetorno() as $value) {
-        $departamentoAnterior = $value['nomenclatura'];
-        $enderecoAnterior = $value['endereco'];
+    foreach ($sEquipamento->mConexao->getRetorno() as $value) {
+        $categoriaAnterior = $value['categoria_idcategoria'];
+        $tensaoAnterior = $value['tensao_idtensao'];
+        $correnteAnterior = $value['corrente_idcorrente'];
+        $sistemaOperacionalAnterior = $value['sistemaOperacional_idsistemaOperacional'];
+        $numeroDeSerieAnterior = $value['numeroDeSerie'];
+        $etiquetaDeServicoAnterior = $value['etiquetaDeServico'];
+        $modeloAnterior = $value['modelo_idmodelo'];
+        $ambienteAnterior = $value['ambiente_idambiente'];
     }
     
-    //verifica se a departamento já possui email
-    $sEmail = new sEmail('', '');
-    $sEmail->setNomeCampo('departamento_iddepartamento');
-    $sEmail->setValorCampo($idDepartamento);
-    $sEmail->consultar($pagina);
+    //Obtém os dados da marca do equipamento
+    $sModelo = new sModelo();
+    $sModelo->setNomeCampo('idmodelo');
+    $sModelo->setValorCampo($modeloAnterior);
+    $sModelo->consultar($pagina);
     
-    //caso tenha email registrado então retorne o id do email
-    if($sEmail->getValidador()){
-        foreach ($sEmail->mConexao->getRetorno() as $value) {
-            $idEmail = $value['email_idemail'];
-        }
+    foreach ($sModelo->mConexao->getRetorno() as $value) {
+        $marcaAnterior = $value['marca_idmarca'];
+    }
         
-        //consulta os dados do e-mail anterior
-        $sEmail->setNomeCampo('idemail');
-        $sEmail->setValorCampo($idEmail);
-        $sEmail->consultar('tMenu4_2_2_1.php-2');
-        
-        foreach ($sEmail->mConexao->getRetorno() as $value) {
-            $emailAnterior = $value['nomenclatura'];
-        }
-    }   
-    
-    //verifica se a departamento já possui telefone
-    $sTelefone = new sTelefone(0, 0, '');
-    $sTelefone->setNomeCampo('departamento_iddepartamento');
-    $sTelefone->setValorCampo($idDepartamento);
-    $sTelefone->consultar($pagina);
-    
-    //caso tenha telefone registrado então retorne o id do telefone
-    if($sTelefone->getValidador()){
-        foreach ($sTelefone->mConexao->getRetorno() as $value) {
-            $idTelefone = $value['telefone_idtelefone'];
-        }
-        
-        //consulta os dados do e-mail anterior
-        $sTelefone->setNomeCampo('idtelefone');
-        $sTelefone->setValorCampo($idTelefone);
-        $sTelefone->consultar('tMenu4_2_2_1.php-2');
-        
-        foreach ($sTelefone->mConexao->getRetorno() as $value) {
-            $telefoneAnterior = $value['numero'];
-            $whatsAppAnterior = $value['whatsApp'];
-        }
-        
-        //Insere os caracteres especiais para realizar a comparação
-        $sTratamentoTelefone = new sTratamentoDados($telefoneAnterior);
-        $telefoneAnterior = $sTratamentoTelefone->tratarTelefone();
-    }        
-    
     //alimenta histórico
-    if($departamento != $departamentoAnterior){
-        alimentaHistorico($pagina, $acao, 'departamento', $departamentoAnterior, $departamento, $idUsuario);
-    }    
-    if(isset($enderecoAnterior)){
-        if($endereco != $enderecoAnterior){
-            alimentaHistorico($pagina, $acao, 'endereco', $enderecoAnterior, $endereco, $idUsuario);
-        }
-    }else{
-        if($endereco){
-            alimentaHistorico($pagina, $acao, 'endereco', '', $endereco, $idUsuario);
-        }
-    }
-    if(isset($emailAnterior)){
-        if($email != $emailAnterior){
-            alimentaHistorico($pagina, $acao, 'email', $emailAnterior, $email, $idUsuario);
-        }
-    }else{
-        if($email){
-            alimentaHistorico($pagina, $acao, 'email', '', $email, $idUsuario);
-        }
-    }
-    if(isset($telefoneAnterior)){
-        if($telefone != $telefoneAnterior){
-            alimentaHistorico($pagina, $acao, 'telefone', $telefoneAnterior, $telefone, $idUsuario);
-        }
-    }else{
-        if($telefone){
-            alimentaHistorico($pagina, $acao, 'telefone', '', $telefone, $idUsuario);
-        }
-    }
-    if(isset($whatsAppAnterior)){
-        if($whatsApp != $whatsAppAnterior){
-            alimentaHistorico($pagina, $acao, 'whatsApp', $whatsAppAnterior, $whatsApp, $idUsuario);
-        }
-    }else{
-        if($whatsApp){
-            alimentaHistorico($pagina, $acao, 'whatsApp', '', $whatsApp, $idUsuario);
-        }
+    $alterar = [];
+    if($categoria != $categoriaAnterior){
+        array_push($alterar, 'categoria');
+        alimentaHistorico($pagina, $acao, 'categoria', $categoriaAnterior, $categoria, $idUsuario);
+    } 
+    if($marca != $marcaAnterior){
+        alimentaHistorico($pagina, $acao, 'marca', $marcaAnterior, $marca, $idUsuario);
+    }     
+    if($tensao != $tensaoAnterior){
+        array_push($alterar, 'tensao');
+        alimentaHistorico($pagina, $acao, 'tensao', $tensaoAnterior, $tensao, $idUsuario);
+    } 
+    if($corrente != $correnteAnterior){
+        array_push($alterar, 'corrente');
+        alimentaHistorico($pagina, $acao, 'corrente', $correnteAnterior, $corrente, $idUsuario);
+    } 
+    if($sistemaOperacional != $sistemaOperacionalAnterior){
+        array_push($alterar, 'sistemaOperacional');
+        alimentaHistorico($pagina, $acao, 'sistemaOperacional', $sistemaOperacionalAnterior, $sistemaOperacional, $idUsuario);
+    } 
+    if($serie != $numeroDeSerieAnterior){
+        array_push($alterar, 'serie');
+        alimentaHistorico($pagina, $acao, 'numeroDeSerie', $numeroDeSerieAnterior, $serie, $idUsuario);
+    } 
+    if($etiqueta != $etiquetaDeServicoAnterior){
+        array_push($alterar, 'etiqueta');
+        alimentaHistorico($pagina, $acao, 'etiquetaDeServico', $etiquetaDeServicoAnterior, $etiqueta, $idUsuario);
+    } 
+    if($modelo != $modeloAnterior){
+        array_push($alterar, 'modelo');
+        alimentaHistorico($pagina, $acao, 'modelo', $modeloAnterior, $modelo, $idUsuario);
+    } 
+    if($ambiente != $ambienteAnterior){
+        array_push($alterar, 'ambiente');
+        alimentaHistorico($pagina, $acao, 'ambiente', $ambienteAnterior, $ambiente, $idUsuario);
     }
     
-    
-    //se não for preenchido o campo departamento, retorne com mensagem de erro
-    if(!$departamento){
-        $sConfiguracao = new sConfiguracao();
-        header("Location: {$sConfiguracao->getDiretorioVisualizacaoAcesso()}tPainel.php?menu=4_2_2_1&pagina=tMenu4_2_2.php&seguranca={$idDepartamentoCriptografada}&formulario=f1&campo=departamento&codigo=A10");
-        exit(); 
-    }else{
-        //altera a nomenclatura da departamento        
-        if($departamento != $departamentoAnterior){
-            $alteracao = true;
-            $sDepartamento = new sDepartamento(0);
-            $sDepartamento->setNomeCampo('nomenclatura');
-            $sDepartamento->setValorCampo($departamento);
-            $sDepartamento->setIdDepartamento($idDepartamento);
-            $sDepartamento->alterar($pagina);
-        }
-    }
-    
-    //se não for preenchido o campo endereco, retorne com mensagem de erro
-    if(!$endereco){
-        $sConfiguracao = new sConfiguracao();
-        header("Location: {$sConfiguracao->getDiretorioVisualizacaoAcesso()}tPainel.php?menu=4_2_2_1&pagina=tMenu4_2_2.php&seguranca={$idDepartamentoCriptografada}&formulario=f1&campo=endereco&codigo=A10");
-        exit(); 
-    }else{
-        //altera o endereco da departamento        
-        if($endereco != $enderecoAnterior){
-            $alteracao = true;
-            $sDepartamento = new sDepartamento(0);
-            $sDepartamento->setNomeCampo('endereco');
-            $sDepartamento->setValorCampo($endereco);
-            $sDepartamento->setIdDepartamento($idDepartamento);
-            $sDepartamento->alterar($pagina);
-        }
-    }
-    
-    //se for passado um endereço de email diferente
-    if(isset($emailAnterior)){
-        if( $email != $emailAnterior){
-            //verifica se o email é válido
-            $sTratamentoEmail = new sTratamentoDados($email);
-            $emailTratado = $sTratamentoEmail->tratarEmail();            
-
-            //se o email for válido, verifica se já não existe um registro 
-            if($emailTratado || empty($email)){   
-                //se não passou nenhum e-mail então passar "null" para a instrução
-                if(empty($email)){
-                    $email = 'null';
-                }
-                
-                $sEmail->setNomeCampo('nomenclatura');
-                $sEmail->setValorCampo($email);
-                $sEmail->consultar('tMenu4_2_2_1.php-2');
-                                
-                if($sEmail->getValidador()){
-                    $sConfiguracao = new sConfiguracao();
-                    header("Location: {$sConfiguracao->getDiretorioVisualizacaoAcesso()}tPainel.php?menu=4_2_2_1&pagina=tMenu4_2_2.php&seguranca={$idDepartamentoCriptografada}&formulario=f1&campo=email&codigo=A12");
-                    exit();
-                }else{
-                    if($email == 'null'){
-                        $alteracao = true;
-                        $dados = [
-                            'email_idemail' => $idEmail,
-                            'departamento_iddepartamento' => $idDepartamento
-                        ];
-                        $sEmail->deletar('tMenu4_2_2_1.php', $dados);
-                        
-                        $sEmail->setNomeCampo('idemail');
-                        $sEmail->setValorCampo($idEmail);
-                        $sEmail->deletar('tMenu4_2_2_1.php-2', '');
-                    }else{
-                        $alteracao = true;
-                        $sEmail->setNomeCampo('nomenclatura');
-                        $sEmail->setValorCampo($email);
-                        $sEmail->setIdEmail($idEmail);
-                        $sEmail->alterar('tMenu4_2_2_1.php');
-                    }
-                }
-            }else{
-                $sConfiguracao = new sConfiguracao();
-                header("Location: {$sConfiguracao->getDiretorioVisualizacaoAcesso()}tPainel.php?menu=4_2_2_1&pagina=tMenu4_2_2.php&seguranca={$idDepartamentoCriptografada}&formulario=f1&campo=email&codigo=A2");
-                exit(); 
-            }
-        }
-    }else{
-        if($email){
-            //verifica se já existe um e-mail com essa nomenclatura
-            $sEmail->setNomeCampo('nomenclatura');
-            $sEmail->setValorCampo($email);
-            $sEmail->consultar('tMenu4_2_2_1.php-2');
-                
-            if($sEmail->getValidador()){
-                $sConfiguracao = new sConfiguracao();
-                header("Location: {$sConfiguracao->getDiretorioVisualizacaoAcesso()}tPainel.php?menu=4_2_2_1&pagina=tMenu4_2_2.php&seguranca={$idDepartamentoCriptografada}&formulario=f1&campo=email&codigo=A12");
-                exit();
-            }else{
-                //caso não tenha e-mail registrado para alteração, registre um novo na tabela email   
-                $tratarDados = [
-                    'nomenclatura' => $email
-                ];
-                $sEmail->inserir($pagina, $tratarDados);
-
-                //se obteve o registro do último e-mail inserido, registre-o na tabela email_has_departamento
-                if($sEmail->mConexao->getRegistro()){
-                    //registre também na tabela email_has_departamento  
-                    $alteracao = true;
-                    $sEmail->setNomeCampo('departamento');
-                    $tratarDados = [
-                        'idemail' => $sEmail->mConexao->getRegistro(),
-                        'iddepartamento' => $idDepartamento
-                    ];
-                    $sEmail->inserir('tMenu4_2_2_1-email_has_departamento.php', $tratarDados);
-                }else{
-                    //retorne mensagem de erro sem registrar o e-mail
-                    $sConfiguracao = new sConfiguracao();
-                    header("Location: {$sConfiguracao->getDiretorioVisualizacaoAcesso()}tPainel.php?menu=4_2_2_1&pagina=tMenu4_2_2.php&seguranca={$idDepartamentoCriptografada}&formulario=f1&campo=email&codigo=E5");
-                    exit(); 
-                }   
-            }
-        }           
-    }
-    
-    //se tiver telefone registrado
-    if(isset($telefoneAnterior)){
-        if($telefone != $telefoneAnterior){
-            //trata o numero antes de alterar no bd            
-            $sTratamentoTelefone = new sTratamentoDados($telefone);
-            $telefoneDepartamentoTratado = $sTratamentoTelefone->tratarTelefone();
-            
-            $sTelefone = new sTelefone(0, 0, '');
-            $sTelefone->verificarTelefone($telefoneDepartamentoTratado);
-            
-            if($sTelefone->getValidador() || strlen($telefoneDepartamentoTratado) == 0){
-                $alteracao = true;
-                //altera os dados do telefone no bd
-                $sTelefone = new sTelefone(0, 0, '');
-                $sTelefone->setIdTelefone($idTelefone);
-                $sTelefone->setNomeCampo('numero');
-                $sTelefone->setValorCampo($telefoneDepartamentoTratado);
-                $sTelefone->alterar('tMenu4_2_2_1.php');
-            }else{
-                //retorne com mensagem de alerta por não atender aos requisitos
-                $sConfiguracao = new sConfiguracao();
-                header("Location: {$sConfiguracao->getDiretorioVisualizacaoAcesso()}tPainel.php?menu=4_2_2_1&pagina=tMenu4_2_2.php&seguranca={$idDepartamentoCriptografada}&formulario=f1&campo=telefone&codigo=A11");
-                exit();
-            }
-        }
-    }else{
-        //se não localizar registro de telefone e foi passado um número novo
-        if($telefone){
-            //verifica o telefone atende aos requisitos
-            $sTratamentoTelefone = new sTratamentoDados($telefone);
-            $telefoneTratado = $sTratamentoTelefone->tratarTelefone();
-            
-            $sTelefone = new sTelefone(0, 0, '');
-            $sTelefone->verificarTelefone($telefoneTratado);
-            
-            if($sTelefone->getValidador()){
-                //caso sim, trate o número para registro no bd                
-                $tratarDados = [
-                    'whatsApp' => 0,
-                    'numero' => $telefoneTratado
-                ];                
-                $sTelefone->inserir('tMenu4_2_2_1.php', $tratarDados);
-                
-                //se o registro foi realizado com sucesso
-                if($sTelefone->mConexao->getRegistro()){
-                    $idTelefone = $sTelefone->mConexao->getRegistro();                    
-                    //registre também na tabela email_has_departamento  
-                    $alteracao = true;
-                    $sTelefone->setNomeCampo('departamento');
-                    $tratarDados = [
-                        'idtelefone' => $sTelefone->mConexao->getRegistro(),
-                        'iddepartamento' => $idDepartamento
-                    ];
-                    $sTelefone->inserir('tMenu4_2_2_1-telefone_has_departamento.php', $tratarDados);                    
-                }else{
-                    //não registrou o telefone
-                    $sConfiguracao = new sConfiguracao();
-                    header("Location: {$sConfiguracao->getDiretorioVisualizacaoAcesso()}tPainel.php?menu=4_2_2_1&pagina=tMenu4_2_2.php&seguranca={$idDepartamentoCriptografada}&formulario=f1&campo=telefone&codigo=E6");
-                    exit();
-                }   
-            }else{
-                //retorne com mensagem de alerta por não atender aos requisitos
-                $sConfiguracao = new sConfiguracao();
-                header("Location: {$sConfiguracao->getDiretorioVisualizacaoAcesso()}tPainel.php?menu=4_2_2_1&pagina=tMenu4_2_2.php&seguranca={$idDepartamentoCriptografada}&formulario=f1&campo=telefone&codigo=A11");
-                exit();
-            }
-        }
-    }
-    
-    if($whatsApp != $whatsAppAnterior){
-        $alteracao = true;
-        $sTelefone->setIdTelefone($idTelefone);
-        $sTelefone->setNomeCampo('whatsApp');
-        $sTelefone->setValorCampo($whatsApp);
-        $sTelefone->alterar('tMenu4_2_2_1.php');
-
-        //retorne com as alterações realizadas
-        $sConfiguracao = new sConfiguracao();
-        header("Location: {$sConfiguracao->getDiretorioVisualizacaoAcesso()}tPainel.php?menu=4_2_2_1&pagina=tMenu4_2_2.php&seguranca={$idDepartamentoCriptografada}&formulario=f1&campo=telefone&codigo=S1");
-    }
-    
-    if( $alteracao){
-        $sProtocolo = new sProtocolo();
-        $sProtocolo->setNomeCampo('dataHoraEncerramento');
-        $sProtocolo->setValorCampo('null');
-        $sProtocolo->consultar($pagina);
-        
-        //protocolos que ainda não foram encerrados
-        if($sProtocolo->getValidador()){
-            foreach ($sProtocolo->mConexao->getRetorno() as $valueProtocolo) {
-                $idProtocolo = $valueProtocolo['idprotocolo'];
-                
-                $sProtocolo->setIdProtocolo($idProtocolo);
-                $sProtocolo->setNomeCampo('');
-                $sProtocolo->setNomeCampo('departamento');
-                $sProtocolo->setValorCampo($departamento);
-                $sProtocolo->alterar($pagina);
-            }           
+    if(!empty($alterar)){
+        if (in_array('categoria', $alterar)) {
+            $sEquipamento->setIdEquipamento($idEquipamento);
+            $sEquipamento->setNomeCampo('categoria_idcategoria');
+            $sEquipamento->setValorCampo($categoria);
+            $sEquipamento->alterar($pagina);
         }
         
-        //retorne com as alterações realizadas
-        $sConfiguracao = new sConfiguracao();
-        header("Location: {$sConfiguracao->getDiretorioVisualizacaoAcesso()}tPainel.php?menu=4_2_2_1&pagina=tMenu4_2_2.php&seguranca={$idDepartamentoCriptografada}&formulario=f1&campo=todos&codigo=S1");
-        exit();
-    }else{
-        //retorne com as alterações realizadas
-        $sConfiguracao = new sConfiguracao();
-        header("Location: {$sConfiguracao->getDiretorioVisualizacaoAcesso()}tPainel.php?menu=4_2_2_1&pagina=tMenu4_2_2.php&seguranca={$idDepartamentoCriptografada}&formulario=f1");
-        exit();
-    }    
+        if (in_array('modelo', $alterar)) {
+            $sEquipamento->setIdEquipamento($idEquipamento);
+            $sEquipamento->setNomeCampo('modelo_idmodelo');
+            $sEquipamento->setValorCampo($modelo);
+            $sEquipamento->alterar($pagina);
+        }
+        
+        if (in_array('etiqueta', $alterar)) {  
+            $sEquipamento->setIdEquipamento($idEquipamento);
+            $sEquipamento->setNomeCampo('etiquetaDeServico');
+            $sEquipamento->setValorCampo($etiqueta);
+            $sEquipamento->alterar($pagina);
+        }
+        
+        if (in_array('serie', $alterar)) {  
+            $sEquipamento->setIdEquipamento($idEquipamento);
+            $sEquipamento->setNomeCampo('numeroDeSerie');
+            $sEquipamento->setValorCampo($serie);
+            $sEquipamento->alterar($pagina);
+        }
+        
+        if (in_array('serie', $alterar)) {  
+            $sEquipamento->setIdEquipamento($idEquipamento);
+            $sEquipamento->setNomeCampo('numeroDeSerie');
+            $sEquipamento->setValorCampo($serie);
+            $sEquipamento->alterar($pagina);
+        }
+        
+        if (in_array('tensao', $alterar)) {  
+            $sEquipamento->setIdEquipamento($idEquipamento);
+            $sEquipamento->setNomeCampo('tensao_idtensao');
+            $sEquipamento->setValorCampo($tensao);
+            $sEquipamento->alterar($pagina);
+        }
+        
+        if (in_array('corrente', $alterar)) {  
+            $sEquipamento->setIdEquipamento($idEquipamento);
+            $sEquipamento->setNomeCampo('corrente_idcorrente');
+            $sEquipamento->setValorCampo($corrente);
+            $sEquipamento->alterar($pagina);
+        }
+        
+        if (in_array('sistemaOperacional', $alterar)) {  
+            $sEquipamento->setIdEquipamento($idEquipamento);
+            $sEquipamento->setNomeCampo('sistemaOperacional_idsistemaOperacional');
+            $sEquipamento->setValorCampo($sistemaOperacional);
+            $sEquipamento->alterar($pagina);
+        }
+        
+        if (in_array('ambiente', $alterar)) {  
+            $sEquipamento->setIdEquipamento($idEquipamento);
+            $sEquipamento->setNomeCampo('ambiente_idambiente');
+            $sEquipamento->setValorCampo($ambiente);
+            $sEquipamento->alterar($pagina);
+        }
+        
+        if ($sEquipamento->mConexao->getValidador()) {
+            $idEquipamentoCriptografada = base64_encode($idEquipamento);
+            $sConfiguracao = new sConfiguracao();
+            header("Location: {$sConfiguracao->getDiretorioVisualizacaoAcesso()}tPainel.php?menu=3_2_1&campo=todos&codigo=S1&seguranca=$idEquipamentoCriptografada");
+        }
+    }
 }else{
     //solicitar saída com tentativa de violação
     $sSair = new sSair();

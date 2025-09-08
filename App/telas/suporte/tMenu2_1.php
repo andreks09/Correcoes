@@ -118,7 +118,7 @@ HTML;
                         }
                     ?>
                     <div class="ocultarTabelaMenu2_1" id="ocultarTabelaMenu2_1" name="ocultarTabelaMenu2_1">
-                        <table class="table table-bordered table-striped" name="tabela1" id="tabela1">
+                        <table class="table table-bordered table-striped" name="tabela2" id="tabela2">
                             <thead>
                                 <tr>
                                     <th>Identificação</th>

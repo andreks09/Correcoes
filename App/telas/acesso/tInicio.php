@@ -6,6 +6,17 @@
         </h3>
     </div>
     <div class="card-body">
+        <div class="callout callout-info">
+            <h5>Implementação - Alterar equipamento</h5>
+            <p>
+                Versão: 2.8.2-beta (pós teste);<br />
+                Locais: tMenu3_2_1;<br />
+                Campos: categoria, marca, modelo, etiqueta de serviço, número de série, tensão, corrente, sistema operacional, ambiente;<br />
+                Data: 08/09/2025;<br />                
+                Reclamação: Não consigo alterar os dados do equipamento<br />  
+                Solução: Implementado lógica no algoritmo para alteração dos dados do equipamento<br />   
+            </p>
+        </div>
         <div class="callout callout-danger">
             <h5>Correção - Alterar requerente</h5>
             <p>

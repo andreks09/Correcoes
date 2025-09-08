@@ -1036,12 +1036,49 @@ HTML;
                     "responsive": true,
                     "lengthChange": false,
                     "autoWidth": false,
+                    "order": [10, 'desc'],
                     buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
                     initComplete: function () {
                         this.api()
                         .buttons()
                         .container()
-                        .appendTo(" #tabela1_wrapper .col-md-6:eq(0)");
+                        .appendTo("#tabela1_wrapper .col-md-6:eq(0)");
+                    }
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                $("#tabela2").DataTable({
+                    language: {url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/pt-BR.json"},
+                    "responsive": true,
+                    "lengthChange": false,
+                    "autoWidth": false,
+                    "order": [0, 'asc'],
+                    buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
+                    initComplete: function () {
+                        this.api()
+                        .buttons()
+                        .container()
+                        .appendTo("#tabela2_wrapper .col-md-6:eq(0)");
+                    }
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                $("#tabela3").DataTable({
+                    language: {url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/pt-BR.json"},
+                    "responsive": true,
+                    "lengthChange": false,
+                    "autoWidth": false,
+                    "order": [5, 'asc'],
+                    buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
+                    initComplete: function () {
+                        this.api()
+                        .buttons()
+                        .container()
+                        .appendTo("#tabela3_wrapper .col-md-6:eq(0)");
                     }
                 });
             });

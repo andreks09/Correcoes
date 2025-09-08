@@ -18,6 +18,7 @@ use App\sistema\suporte\{
 $pagina = $_POST['pagina'];
 
 if ($pagina == 'tMenu2_2_1_3.php') {
+    $pagina = $_POST['pagina'];
     $idProtocolo = $_POST['idProtocolo'];
     $numero = $_POST['etapa'];
     $acao = $_POST['acao'];
@@ -110,5 +111,5 @@ function alimentaHistorico($pagina, $acao, $campo, $valorCampoAnterior, $valorCa
 
     //insere na tabela histórico
     $sHistorico = new sHistorico();
-    $sHistorico->inserir('tSolicitarAcesso.php', $tratarDados);
+    $sHistorico->inserir('tMenu2_2_1_3.php', $tratarDados);
 }

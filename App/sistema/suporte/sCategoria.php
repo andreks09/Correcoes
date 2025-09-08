@@ -24,7 +24,8 @@ class sCategoria {
             $pagina == 'tMenu2_2.php' ||
             $pagina == 'tMenu2_2_1.php' ||
             $pagina == 'tMenu2_2_1_2.php-tabela' ||
-            $pagina == 'tMenu3_2.php') {
+            $pagina == 'tMenu3_2.php' ||
+            $pagina == 'tMenu3_2_1.php-2') {
             //monta os dados há serem passados na query               
             $dados = [
                 'comando' => 'SELECT',

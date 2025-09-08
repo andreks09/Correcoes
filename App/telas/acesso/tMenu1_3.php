@@ -78,7 +78,7 @@ HTML;
         }
         ?>
         
-        <table id="tabela1" class="table table-bordered table-striped">
+        <table id="tabela3" class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>Usuário</th>

@@ -47,7 +47,8 @@ class sEquipamento {
             $pagina == 'tMenu2_2_1.php' ||
             $pagina == 'tMenu2_2_1_2.php-f2' ||
             $pagina == 'tMenu3_1.php' ||
-            $pagina == 'tMenu3_2_1.php') {
+            $pagina == 'tMenu3_2_1.php' ||
+            $pagina == 'tMenu3_2_1.php-2') {
             //monta os dados há serem passados na query               
             $dados = [
                 'comando' => 'SELECT',
@@ -111,7 +112,7 @@ class sEquipamento {
         //cria conexão para inserir os dados no BD
         $this->setMConexao(new mConexao());
 
-        if ($pagina == '') {
+        if ($pagina == 'tMenu3_2_1.php') {
             $dados = [
                 'comando' => 'UPDATE',
                 'tabela' => 'equipamento',
@@ -120,6 +121,7 @@ class sEquipamento {
                 'camposCondicionados' => 'idequipamento',
                 'valoresCondicionados' => $this->getIdEquipamento()
             ];
+            
             $this->mConexao->CRUD($dados);
             $this->setValidador($this->mConexao->getValidador());
         }

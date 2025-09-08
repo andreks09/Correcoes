@@ -19,7 +19,7 @@ $sCoordenacao->consultar($pagina);
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-        <table id="tabela1" class="table table-bordered table-striped">
+        <table id="tabela2" class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>Secretaria</th>

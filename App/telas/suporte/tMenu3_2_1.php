@@ -89,19 +89,10 @@ if(isset($_GET['seguranca'])){
                 
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-1">
-                            <div class="form-group">
-                                <label>Patrimônio</label>
-                                <select class="form-control" name="equipamento" id="equipamento" form="f1">
-                                    <?php
-                                    foreach ($sEquipamento->mConexao->getRetorno() as $value) {
-                                        $idEquipamento == $value['idequipamento'] ? $atributo = 'selected=""' : $atributo = '';
-                                        echo '<option value="' . $value['idequipamento'] . '"' . $atributo . ' >' . $value['patrimonio'] . '</option>';
-                                    }
-                                    ?>
-                                </select>
-                            </div>
-                        </div>          
+                        <div class="form-group col-md-1">
+                            <label for="patrimonio">Patrimônio</label>
+                            <input type="text" class="form-control" value="<?php echo $patrimonio ?>" name="patrimonio" id="patrimonio" readonly="" form="f1">
+                        </div>    
                         <div class="col-md-1">
                             <div class="form-group">
                                 <label>Categoria</label>
@@ -119,7 +110,7 @@ if(isset($_GET['seguranca'])){
                             <div class="form-group">
                                 <label>Marca</label>
                                 <select class="form-control" name="marcaF1" id="marcaF1" form="f1">
-                                    <?php
+                                    <?php                                    
                                     foreach ($sMarca->mConexao->getRetorno() as $value) {
                                         $idMarca == $value['idmarca'] ? $atributo = 'selected=""' : $atributo = '';
                                         echo '<option value="' . $value['idmarca'] . '"' . $atributo . ' >' . $value['nomenclatura'] . '</option>';
@@ -191,7 +182,7 @@ if(isset($_GET['seguranca'])){
                         <div class="col-md-1">
                             <div class="form-group">
                                 <label>Ambiente</label>
-                                <select class="form-control" name="ambienteF1" id="ambienteF1" form="f1">
+                                <select class="form-control" name="ambiente" id="ambiente" form="f1">
                                     <?php
                                     foreach ($sAmbiente->mConexao->getRetorno() as $value) {
                                         $idAmbiente == $value['idambiente'] ? $atributo = 'selected=""' : $atributo = '';
@@ -204,7 +195,9 @@ if(isset($_GET['seguranca'])){
                     </div>
                 </div>
                 <!-- /.card-body -->
-                <input type="hidden" name="pagina" id="pagina" value='tMenu3_2_1.php' form="f1">
+                <input type="hidden" name="idEquipamento" id="idEquipamento" value="<?php echo $idEquipamento; ?>" form="f1">
+                <input type="hidden" name="pagina" id="pagina" value="tMenu3_2_1.php" form="f1">
+                <input type="hidden" name="acao" id="acao" value="alterar" form="f1">
                 <form action="<?php echo $sConfiguracao->getDiretorioControleSuporte(); ?>sAlterarEquipamento.php" method="post" enctype="multipart/form-data" name="f1" id="f1">
                     <div class="card-footer">
                         <?php
@@ -433,23 +426,29 @@ HTML;
     <div class="row">
         <div class="col-lg-12 col-12">
             <?php
-            require_once '../../sistema/acesso/sNotificacao.php';
+            if(isset($_GET['codigo'])){
+                $sNotificacao = new sNotificacao($_GET['codigo']);
+                //cria as variáveis da notificação
+                $tipo = $sNotificacao->getTipo();
+                $titulo = $sNotificacao->getTitulo();
+                $mensagem = $sNotificacao->getMensagem();
+                $menu = $_GET['menu'];
 
-            if (isset($codigo)) {
-                $mensagem = explode('|', $codigo);
                 echo <<<HTML
-                <div class="col-mb-3">
-                    <div class="card card-outline card-{$mensagem[0]}">
-                        <div class="card-header">
-                            <h3 class="card-title">{$mensagem[1]}</h3>
-                        </div>
-                        <div class="card-body">
-                            {$mensagem[2]}
+                    <div class="col-mb-3">
+                        <div class="card card-outline card-{$tipo}">
+                            <div class="card-header">
+                                <h3 class="card-title">{$titulo}</h3>
+                            </div>
+                            <div class="card-body">
+                                {$mensagem}
+                            </div>
                         </div>
                     </div>
-                </div>
 HTML;
             }
+            
+            
             ?>
         </div>
     </div>
@@ -463,7 +462,7 @@ HTML;
 
             //mostra somente os departamentos da secretaria escolhida
             $.ajax({
-                url: 'https://itapoa.app.br/App/sistema/suporte/ajaxModelo.php',
+                url: '../../../App/sistema/suporte/ajaxModelo.php',
                 type: 'POST',
                 data: {
                     'idMarca': idMarca

@@ -22,7 +22,7 @@ $sUsuario->consultar('tMenu1_2.php');
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-        <table id="tabela1" class="table table-bordered table-striped">
+        <table id="tabela3" class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>Usuário</th>

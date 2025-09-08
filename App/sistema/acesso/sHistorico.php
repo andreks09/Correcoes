@@ -45,7 +45,9 @@ class sHistorico {
             $pagina == 'tMenu2_2_3.php' ||
             $pagina == 'tMenu4_2_1_1.php' ||
             $pagina == 'tMenu2_2_1_2.php-f2' ||
-            $pagina == 'tMenu2_1.php') {
+            $pagina == 'tMenu2_2_1_3.php' ||
+            $pagina == 'tMenu2_1.php' ||
+            $pagina == 'tMenu3_2_1.php') {
             
             //insere os dados do histórico no BD     
             //obtèm dados do endereço de ip
