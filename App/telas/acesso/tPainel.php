@@ -84,6 +84,8 @@ if(isset($_GET['menu'])){
         <link rel="stylesheet" href="<?php echo $sConfiguracao->getDiretorioPrincipal(); ?>vendor/almasaeed2010/adminlte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
         <!--Ajax-->
         <script type="text/javascript" src="<?php echo $sConfiguracao->getDiretorioControleAcesso() ?>jQuery.js"></script>
+        <!--Gráficos-->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     <body class="hold-transition sidebar-mini pace-primary">
         <!-- Site wrapper -->
@@ -632,7 +634,8 @@ HTML;
                                 $menu == '6_1_1' ||
                                 $menu == '6_1_2' ||
                                 $menu == '6_2' ||
-                                $menu == '6_3' ?
+                                $menu == '6_3' ||
+                                $menu == '6_3_1' ?
                                 $atributo = ' menu-is-opening menu-open' :
                                 $atributo = '';
                                 
@@ -689,7 +692,8 @@ HTML;
 HTML;                                       
                                 
                                 //abre os menus da condição
-                                $menu == '6_3' ?
+                                $menu == '6_3' ||
+                                $menu == '6_3_1' ?
                                 $atributo = ' active' :
                                 $atributo = '';
                                 
@@ -943,6 +947,9 @@ HTML;
                             break;
                         case "6_3":
                             require_once '../suporte/tMenu6_3.php';
+                            break;
+                        case "6_3_1":
+                            require_once '../suporte/tMenu6_3_1.php';
                             break;
                         case "7_1":
                             require_once './tMenu7_1.php';

@@ -67,7 +67,7 @@ class sConfiguracao{
         $this->hostname = 'localhost';
         $this->username = 'root';
         $this->password = '';
-        $this->database = 'itapoaapp_sspmi';
+        $this->database = 'itapoaap_sspmi';
         $this->port = 3306;
         $this->socket = '';
         $this->charsetDB = 'utf8';

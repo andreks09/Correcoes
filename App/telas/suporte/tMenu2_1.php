@@ -242,7 +242,7 @@ HTML;
                 </form>
                 <div class="card-footer">
                     <?php
-                    if(isset($menu)){
+                    if($menu == 'tMenu2_2_1_2'){
                         echo "<button type=\"submit\" class=\"btn btn-primary\" form=\"f2\">Alterar</button>";
                     }else{
                         echo "<button type=\"submit\" class=\"btn btn-primary\" form=\"f1\">Próximo</button>";
